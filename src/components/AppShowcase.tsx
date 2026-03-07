@@ -56,10 +56,10 @@ const AppShowcase = () => {
                 loading="lazy" />
               
               </div>
-              {screen.label &&
-            <p className="text-center text-sm text-muted-foreground mt-3 font-medium">
-                  {screen.label}
-                </p>
+              {screen.label
+
+
+
             }
             </motion.div>
           )}

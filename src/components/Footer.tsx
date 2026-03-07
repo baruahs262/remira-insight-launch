@@ -33,7 +33,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="https://tiktok.com"
+            href="https://www.tiktok.com/@remira.app"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"

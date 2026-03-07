@@ -72,7 +72,7 @@ const Features = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={cardVariants}
-            className="glass-card rounded-xl p-7 group hover:border-primary/30 transition-colors">
+            className="glass-card rounded-xl p-7 group transition-colors border-blue-600">
             
               <feature.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-display font-semibold text-lg mb-2">{feature.title}</h3>

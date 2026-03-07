@@ -7,7 +7,7 @@ const Hero = () => {
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] animate-pulse-glow" />
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
+      <div className="relative z-10 max-w-5xl mx-auto text-center text-primary">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -32,8 +32,10 @@ const Hero = () => {
           transition={{ delay: 0.35, duration: 0.7 }}
           className="text-5xl md:text-7xl font-display font-bold leading-[0.95] mb-6 lg:text-6xl text-secondary-foreground">
           
-          Designed for{" "}
-          <span className="text-gradient">Type-1 Diabetics</span>
+          Take control of{" "}
+          <span className="text-gradient">Type-1 Diabetics
+
+</span>
         </motion.h1>
 
         <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}

@@ -63,7 +63,7 @@ const Footer = () => {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="text-muted-foreground text-sm"
         >
-          © {new Date().getFullYear()} Remira. All rights reserved.
+          © {new Date().getFullYear()} Remira LLC. All rights reserved.
         </motion.p>
       </div>
     </footer>

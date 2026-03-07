@@ -3,7 +3,7 @@ import remiraIcon from "@/assets/remira-icon.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center section-padding pt-32 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center section-padding pt-32 overflow-hidden text-secondary">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] animate-pulse-glow" />
 
@@ -21,7 +21,7 @@ const Hero = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-primary font-display font-medium tracking-widest uppercase text-sm mb-4">
+          className="font-display font-medium tracking-widest uppercase text-sm mb-4 text-blue-600">
           
           Personalized · Actionable · Intelligent
         </motion.p>

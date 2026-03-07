@@ -70,7 +70,7 @@ const Comparison = () => {
                 <span>{row.typical}</span>
               </div>
               <div className="text-center flex items-start justify-center gap-2">
-                <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <Check className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                 <span>{row.remira}</span>
               </div>
             </motion.div>

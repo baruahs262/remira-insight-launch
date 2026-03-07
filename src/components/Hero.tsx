@@ -12,8 +12,8 @@ const Hero = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-8"
-        >
+          className="mb-8">
+          
           <img src={remiraIcon} alt="" className="w-16 h-16 mx-auto mb-6 animate-float" />
         </motion.div>
 
@@ -21,8 +21,8 @@ const Hero = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-primary font-display font-medium tracking-widest uppercase text-sm mb-4"
-        >
+          className="text-primary font-display font-medium tracking-widest uppercase text-sm mb-4">
+          
           Personalized · Actionable · Intelligent
         </motion.p>
 
@@ -30,18 +30,18 @@ const Hero = () => {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.35, duration: 0.7 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.95] mb-6"
-        >
+          className="text-5xl md:text-7xl font-display font-bold leading-[0.95] mb-6 lg:text-6xl text-secondary-foreground">
+          
           Take control of{" "}
-          <span className="text-gradient">Type-1</span>
+          <span className="text-gradient">Type-1 Diabetics
+
+</span>
         </motion.h1>
 
-        <motion.p
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
-        >
+        <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+        className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          
           Remira uses AI to turn your CGM data into personalized, actionable insights — 
           so you can spend less time managing diabetes and more time living.
         </motion.p>
@@ -49,18 +49,18 @@ const Hero = () => {
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.65, duration: 0.6 }}
-        >
+          transition={{ delay: 0.65, duration: 0.6 }}>
+          
           <a
             href="#waitlist"
-            className="inline-block px-8 py-4 rounded-full bg-primary text-primary-foreground font-display font-semibold text-lg glow-primary hover:scale-105 transition-transform"
-          >
+            className="inline-block px-8 py-4 rounded-full bg-primary text-primary-foreground font-display font-semibold text-lg glow-primary hover:scale-105 transition-transform">
+            
             Join the Waitlist
           </a>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Hero;

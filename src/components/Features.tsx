@@ -5,7 +5,7 @@ const features = [
 {
   icon: Brain,
   title: "AI-Powered Insights",
-  description: "Detects patterns you can't see — then gives you actionable advice, not just data."
+  description: "Detects patterns you can't see, then gives you actionable advice, not just data."
 },
 {
   icon: Activity,

@@ -28,15 +28,15 @@ const AppShowcase = () => {
 
 
         
-        <motion.p
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1, duration: 0.6 }}
-          className="text-muted-foreground text-center mb-14 max-w-xl mx-auto">
-          
-          Smart insights, risk scores, and calendar-aware predictions — all from your CGM data.
-        </motion.p>
+        
+
+
+
+
+
+
+
+        
 
         <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
           {screens.map((screen, i) =>

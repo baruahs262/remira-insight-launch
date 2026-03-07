@@ -7,7 +7,7 @@ import appCalendar from "@/assets/app-calendar.jpeg";
 import appTypicalDay from "@/assets/app-typical-day.jpeg";
 
 const screens = [
-{ src: appScore, alt: "Daily Score", label: "Daily Score" },
+{ src: appScore, alt: "Daily Score" },
 { src: appInsights, alt: "AI Insights", label: "Insights" },
 { src: appInsightDetail, alt: "Insight Detail", label: "Detail View" },
 { src: appRiskHour, alt: "Risk Hour Detail" },

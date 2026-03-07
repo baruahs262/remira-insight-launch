@@ -22,7 +22,7 @@ const Footer = () => {
           className="flex items-center gap-6"
         >
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/remira.app/?hl=en"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"

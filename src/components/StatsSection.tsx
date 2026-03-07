@@ -7,10 +7,7 @@ const stats = [
 
 
 const StatsSection = () => {
-  return (
-    <section className="section-padding border-y border-border/30">
-      <div className="max-w-5xl mx-auto">
-        
+  return;
 
 
 
@@ -19,25 +16,28 @@ const StatsSection = () => {
 
 
 
-        
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {stats.map((stat, i) =>
-          <motion.div
-            key={stat.label}
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.15, duration: 0.5 }}
-            className="text-center">
-            
-              
-              <p className="text-muted-foreground text-sm">{stat.label}</p>
-            </motion.div>
-          )}
-        </div>
-      </div>
-    </section>);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 };
 

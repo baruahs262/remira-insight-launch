@@ -37,7 +37,7 @@ const Comparison = () => {
           
           <p className="font-display font-medium tracking-widest uppercase text-sm mb-3 text-blue-600">Why Remira</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold">
-            See the <span className="text-gradient">difference</span>
+            See the <span className="text-gradient text-blue-600">difference.</span>
           </h2>
         </motion.div>
 
@@ -51,8 +51,8 @@ const Comparison = () => {
           {/* Header */}
           <div className="grid grid-cols-3 gap-4 px-6 py-4 border-b border-border/50 text-sm font-display font-semibold">
             <div className="text-muted-foreground">Feature</div>
-            <div className="text-muted-foreground text-center">Typical Apps</div>
-            <div className="text-primary text-center">Remira</div>
+            <div className="text-muted-foreground text-center">Current Apps</div>
+            <div className="text-center text-blue-600">Remira</div>
           </div>
           {/* Rows */}
           {comparison.map((row, i) =>

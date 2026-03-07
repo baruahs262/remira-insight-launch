@@ -37,7 +37,7 @@ const Comparison = () => {
           
           <p className="font-display font-medium tracking-widest uppercase text-sm mb-3 text-blue-600">Why Remira</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold">
-            See the <span className="text-gradient text-blue-600">difference.</span>
+            See the <span className="text-gradient text-blue-600">difference for yourself.</span>
           </h2>
         </motion.div>
 
@@ -70,7 +70,7 @@ const Comparison = () => {
                 <span>{row.typical}</span>
               </div>
               <div className="text-center flex items-start justify-center gap-2">
-                <Check className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                 <span>{row.remira}</span>
               </div>
             </motion.div>

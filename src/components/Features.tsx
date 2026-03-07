@@ -56,7 +56,7 @@ const Features = () => {
           
           <p className="font-display font-medium tracking-widest uppercase text-sm mb-3 text-blue-600">Features</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            More than just <span className="text-gradient text-blue-600">charts</span>
+            More than just <span className="text-gradient text-blue-600">charts.</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
             Remira doesn't show you what you already know — it finds what you miss and helps you act on it.

@@ -38,15 +38,15 @@ const AppShowcase = () => {
           Smart insights, risk scores, and calendar-aware predictions — all from your CGM data.
         </motion.p>
 
-        <div className="flex gap-6 justify-center flex-wrap">
+        <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
           {screens.map((screen, i) => (
             <motion.div
-              key={screen.label}
+              key={screen.alt}
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="group relative w-[200px] flex-shrink-0"
+              className="group"
             >
               <div className="rounded-2xl overflow-hidden border border-border/50 shadow-lg shadow-black/20 transition-transform duration-300 group-hover:scale-105">
                 <img
@@ -56,9 +56,11 @@ const AppShowcase = () => {
                   loading="lazy"
                 />
               </div>
-              <p className="text-center text-sm text-muted-foreground mt-3 font-medium">
-                {screen.label}
-              </p>
+              {screen.label && (
+                <p className="text-center text-sm text-muted-foreground mt-3 font-medium">
+                  {screen.label}
+                </p>
+              )}
             </motion.div>
           ))}
         </div>

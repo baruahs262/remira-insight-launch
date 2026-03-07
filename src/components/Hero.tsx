@@ -50,7 +50,7 @@ Helping you spend less time managing diabetes and more time living.
           
           <a
             href="#waitlist"
-            className="inline-block px-8 py-4 rounded-full bg-primary text-primary-foreground font-display font-semibold text-lg glow-primary hover:scale-105 transition-transform">
+            className="inline-block px-8 py-4 rounded-full bg-teal-300 text-primary-foreground font-display font-semibold text-lg glow-primary hover:scale-105 transition-transform">
             
             Join the Waitlist
           </a>

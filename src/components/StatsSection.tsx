@@ -31,7 +31,7 @@ const StatsSection = () => {
             transition={{ delay: i * 0.15, duration: 0.5 }}
             className="text-center">
             
-              <div className="text-5xl md:text-6xl font-display font-bold text-gradient mb-3">{stat.value}</div>
+              
               <p className="text-muted-foreground text-sm">{stat.label}</p>
             </motion.div>
           )}

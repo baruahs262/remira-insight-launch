@@ -44,7 +44,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="https://twitter.com"
+            href="https://x.com/RemiraApp"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"

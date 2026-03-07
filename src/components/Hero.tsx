@@ -32,10 +32,7 @@ const Hero = () => {
           transition={{ delay: 0.35, duration: 0.7 }}
           className="text-5xl md:text-7xl font-display font-bold leading-[0.95] mb-6 lg:text-6xl text-secondary-foreground">
           
-          Take control of{" "}
-          <span className="text-gradient text-blue-600">Type-1 Diabetics
-
-</span>
+          <span className="text-gradient text-blue-600">Designed for Type-1 Diabetics</span>
         </motion.h1>
 
         <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}

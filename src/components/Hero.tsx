@@ -40,10 +40,10 @@ const Hero = () => {
 
         <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.6 }}
-        className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          
-          Remira uses AI to turn your CGM data into personalized, actionable insights — 
-          so you can spend less time managing diabetes and more time living.
+        className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">Remira uses AI to turn your CGM data into insights hour by hour — 
+Helping you spend less time managing diabetes and more time living.
+
+
         </motion.p>
 
         <motion.div

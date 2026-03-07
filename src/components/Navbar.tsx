@@ -12,7 +12,7 @@ const Navbar = () => {
       <img src={remiraLogo} alt="Remira" className="h-8 md:h-10" />
       <a
         href="#waitlist"
-        className="px-5 py-2.5 rounded-full text-primary-foreground font-display font-semibold text-sm hover:opacity-90 transition-opacity bg-primary">
+        className="px-5 py-2.5 rounded-full text-primary-foreground font-display font-semibold text-sm hover:opacity-90 transition-opacity bg-teal-300">
         
         Join Waitlist
       </a>

@@ -34,6 +34,9 @@ const Hero = () => {
           
           <span className="text-gradient text-blue-600">Designed by a Type-1 Diabetic
           </span>
+          <br />
+          <span className="text-gradient text-blue-600 whitespace-nowrap text-[4.5vw] md:text-[3.5vw] lg:text-[3vw]">Your AI-Powered Type-1 Companion
+          </span>
         </motion.h1>
 
         <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5, duration: 0.6 }} className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">Remira uses AI to turn your CGM data into insights hour by hour — 

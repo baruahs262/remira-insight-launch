@@ -58,8 +58,8 @@ const Features = () => {
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             More than just <span className="text-gradient text-blue-600">charts.</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">Remira doesn't show you what you already know — It finds what you miss and helps you act on it.
-
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">Remira doesn't show you what you already know — 
+It finds what you miss and helps you act on it.
           </p>
         </motion.div>
 

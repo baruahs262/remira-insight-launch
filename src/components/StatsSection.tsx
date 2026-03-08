@@ -7,7 +7,7 @@ const stats = [
 
 
 const StatsSection = () => {
-  return;
+  return null;
 
 
 

@@ -5,12 +5,14 @@ import appScore from "@/assets/app-score.jpeg";
 import appRiskHour from "@/assets/app-risk-hour.jpeg";
 import appCalendar from "@/assets/app-calendar.jpeg";
 import appTypicalDay from "@/assets/app-typical-day.jpeg";
+import appInsights from "@/assets/app-insights.png";
 
 const features = [
 {
   icon: Brain,
   title: "AI-Powered Insights",
-  description: "Detects patterns you can't see, then gives you actionable advice, not just data."
+  description: "Detects patterns you can't see, then gives you actionable advice, not just data.",
+  image: appInsights
 },
 {
   icon: Activity,

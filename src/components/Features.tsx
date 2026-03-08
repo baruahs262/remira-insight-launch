@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Activity, Brain, Calendar, Moon, Target, TrendingUp } from "lucide-react";
+import insightDetailScreenshot from "@/assets/insight-detail-screenshot.png";
 
 const features = [
 {
@@ -20,7 +21,8 @@ const features = [
 {
   icon: Moon,
   title: "Nighttime Planning",
-  description: "Dedicated overnight analysis to prevent lows while you sleep."
+  description: "Dedicated overnight analysis to prevent lows while you sleep.",
+  image: insightDetailScreenshot
 },
 {
   icon: Target,
@@ -77,6 +79,9 @@ It finds what you miss and helps you act on it.
               <feature.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="font-display font-semibold text-lg mb-2">{feature.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+              {'image' in feature && feature.image && (
+                <img src={feature.image} alt={feature.title} className="mt-4 rounded-lg w-full h-auto border border-border/30" loading="lazy" />
+              )}
             </motion.div>
           )}
         </div>

@@ -3,6 +3,7 @@ import { Activity, Brain, Calendar, Moon, Target, TrendingUp } from "lucide-reac
 import insightDetailScreenshot from "@/assets/insight-detail-screenshot.png";
 import appScore from "@/assets/app-score.jpeg";
 import appRiskHour from "@/assets/app-risk-hour.jpeg";
+import appCalendar from "@/assets/app-calendar.jpeg";
 
 const features = [
 {
@@ -18,7 +19,8 @@ const features = [
 {
   icon: Calendar,
   title: "Calendar Sync",
-  description: "Integrates with Google Calendar to link blood glucose trends with your daily routine."
+  description: "Integrates with Google Calendar to link blood glucose trends with your daily routine.",
+  image: appCalendar
 },
 {
   icon: Moon,

@@ -15,7 +15,8 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8">
           
-          <img src={remiraIcon} alt="" className="w-32 h-32 mx-auto mb-6 animate-float" />
+          <img src={remiraIcon} alt="" className="w-32 h-32 mx-auto mb-4 animate-float" />
+          <img src={remiraTextLogo} alt="Remira" className="h-12 mx-auto" />
         </motion.div>
 
         <motion.p

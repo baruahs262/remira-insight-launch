@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import remiraIcon from "@/assets/remira-icon.png";
+import remiraTextLogo from "@/assets/remira-text-logo.png";
 
 const Hero = () => {
   return (

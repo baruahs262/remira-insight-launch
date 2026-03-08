@@ -23,7 +23,7 @@ const Hero = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="font-display font-medium tracking-widest uppercase text-sm mb-4 text-destructive-foreground">
+          className="font-display font-medium tracking-widest uppercase text-xs md:text-sm mb-4 text-destructive-foreground whitespace-nowrap">
           Personalized · Actionable · Intelligent
         </motion.p>
 

@@ -20,7 +20,7 @@ const comparison = [
 {
   label: "Interpretation",
   typical: "Up to you to interpret",
-  remira: "Personalized, actionable insight"
+  remira: "Personalized, clear insights"
 }];
 
 

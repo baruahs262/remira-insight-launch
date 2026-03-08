@@ -38,7 +38,7 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.45, duration: 0.6 }}
           className="text-2xl md:text-3xl font-display font-bold mb-6 text-secondary-foreground">
-          <span className="text-primary-foreground">Designed by a Type-1 Diabetic</span>
+          <span className="text-white">Designed by a Type-1 Diabetic</span>
         </motion.p>
 
         <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5, duration: 0.6 }} className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">Remira uses AI to turn your CGM data into insights hour by hour — 

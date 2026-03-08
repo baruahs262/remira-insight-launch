@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Activity, Brain, Calendar, Moon, Target, TrendingUp } from "lucide-react";
 import insightDetailScreenshot from "@/assets/insight-detail-screenshot.png";
+import appScore from "@/assets/app-score.jpeg";
 
 const features = [
 {
@@ -27,7 +28,8 @@ const features = [
 {
   icon: Target,
   title: "Daily Score",
-  description: "A personalized daily score based on your goals — track progress at a glance."
+  description: "A personalized daily score based on your goals — track progress at a glance.",
+  image: appScore
 },
 {
   icon: TrendingUp,

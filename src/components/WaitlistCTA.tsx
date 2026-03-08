@@ -54,7 +54,7 @@ const WaitlistCTA = () => {
             
               <button
               type="submit"
-              className="px-7 py-3.5 rounded-full text-primary-foreground font-display font-semibold hover:scale-105 transition-transform glow-primary shrink-0 bg-teal-300 hover:bg-teal-200">
+              className="px-7 py-3.5 rounded-full text-primary-foreground font-display font-semibold hover:scale-105 transition-transform glow-primary shrink-0 bg-[#70c5d7]">
               
                 Join Waitlist
               </button>

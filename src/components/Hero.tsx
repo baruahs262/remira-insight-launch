@@ -21,7 +21,7 @@ const Hero = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="font-display font-medium tracking-widest uppercase text-sm mb-4 text-blue-600">
+          className="font-display font-medium tracking-widest uppercase text-sm mb-4 text-destructive-foreground">
           
           Personalized · Actionable · Intelligent
         </motion.p>
@@ -30,20 +30,12 @@ const Hero = () => {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.35, duration: 0.7 }}
-          className="text-4xl md:text-5xl font-display font-bold leading-[0.95] mb-6 lg:text-5xl text-secondary-foreground">
+          className="text-5xl md:text-7xl font-display font-bold leading-[0.95] mb-6 lg:text-6xl text-secondary-foreground">
           
           <span className="text-gradient text-blue-600">Your AI-Powered Type-1 Companion
 
           </span>
         </motion.h1>
-
-        <motion.p
-          initial={{ y: 25, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.45, duration: 0.7 }}
-          className="text-2xl md:text-3xl font-display font-bold leading-[0.95] mb-6 lg:text-3xl">
-          <span className="text-gradient text-blue-600">Designed by a Type-1 Diabetic</span>
-        </motion.p>
 
         <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5, duration: 0.6 }} className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">Remira uses AI to turn your CGM data into insights hour by hour — 
 Helping you spend less time managing diabetes and more time living.

@@ -15,7 +15,8 @@ const features = [
 {
   icon: Activity,
   title: "CGM Integration",
-  description: "Connects to your continuous glucose monitor for seamless, real-time data analysis."
+  description: "Connects to your continuous glucose monitor for seamless, real-time data analysis.",
+  image: appTypicalDay
 },
 {
   icon: Calendar,

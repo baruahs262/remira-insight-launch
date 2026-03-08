@@ -16,53 +16,7 @@ const screens = [
 
 
 const AppShowcase = () => {
-  return;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  return null;
 };
 
 export default AppShowcase;

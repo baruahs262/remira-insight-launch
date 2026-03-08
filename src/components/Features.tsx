@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Activity, Brain, Calendar, Moon, Target, TrendingUp } from "lucide-react";
 import insightDetailScreenshot from "@/assets/insight-detail-screenshot.png";
 import appScore from "@/assets/app-score.jpeg";
+import appRiskHour from "@/assets/app-risk-hour.jpeg";
 
 const features = [
 {
@@ -34,7 +35,8 @@ const features = [
 {
   icon: TrendingUp,
   title: "Trend Detection",
-  description: "Short-term and long-term trend analysis with predictive alerts for highs and lows."
+  description: "Short-term and long-term trend analysis with predictive alerts for highs and lows.",
+  image: appRiskHour
 }];
 
 

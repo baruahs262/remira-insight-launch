@@ -16,9 +16,7 @@ const screens = [
 
 
 const AppShowcase = () => {
-  return (
-    <section className="relative py-20 section-padding overflow-hidden">
-      
+  return;
 
 
 
@@ -60,8 +58,10 @@ const AppShowcase = () => {
 
 
 
-      
-    </section>);
+
+
+
+
 
 };
 

@@ -37,7 +37,7 @@ const Comparison = () => {
           
           <p className="font-display font-medium tracking-widest uppercase text-sm mb-3 text-blue-600">Why Remira</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold">
-            See the <span className="text-gradient text-blue-600">difference for yourself.</span>
+            See the difference <span className="text-gradient text-blue-600">for yourself.</span>
           </h2>
         </motion.div>
 

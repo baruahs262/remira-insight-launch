@@ -7,11 +7,11 @@ const Navbar = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-3 bg-background/80 backdrop-blur-xl border-b border-border/30">
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 bg-background/80 backdrop-blur-xl border-b border-border/30">
       
       <div className="flex flex-col">
         <img src={remiraLogo} alt="Remira" className="h-8 md:h-10" />
-        <p className="font-display font-medium tracking-widest uppercase text-[9px] md:text-xs text-destructive-foreground mt-1">
+        <p className="font-display font-medium tracking-widest uppercase text-[7px] md:text-xs text-destructive-foreground mt-1">
           Personalized · Actionable · Intelligent
         </p>
       </div>

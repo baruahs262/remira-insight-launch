@@ -11,8 +11,8 @@ const SocialLinks = () =>
         </svg>
       </a>
       <a href="https://tiktok.com/@remira.app" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
-        <svg className="w-7 h-7 text-foreground" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13.4a8.28 8.28 0 005.58 2.17v-3.45a4.85 4.85 0 01-3.77-1.66V6.69h3.77z" />
+        <svg className="w-7 h-7 text-foreground" viewBox="0 0 448 512" fill="currentColor">
+          <path d="M448 209.91a210.06 210.06 0 01-122.77-39.25v178.72A162.55 162.55 0 11185 188.31v89.89a74.62 74.62 0 1052.23 71.18V0h88a121.18 121.18 0 001.86 22.17A122.18 122.18 0 00381 102.39a121.43 121.43 0 0067 20.14z" />
         </svg>
       </a>
       <a href="https://x.com/RemiraApp" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+
+const WAITLIST_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSepWPD4eYZ5Z1N1X25qCjHdAZgXUKL86sztKkfn8cIVAHqlXg/viewform?usp=dialog";
 
 const SocialLinks = () =>
 <div className="mt-6">
@@ -25,16 +26,6 @@ const SocialLinks = () =>
 
 
 const WaitlistCTA = () => {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-    }
-  };
-
   return (
     <section id="waitlist" className="section-padding">
       <div className="max-w-2xl mx-auto text-center">
@@ -57,37 +48,20 @@ const WaitlistCTA = () => {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.5 }}>
-          
-          {submitted ?
-          <div className="glass-card rounded-2xl p-8 glow-primary">
-              <div className="text-4xl mb-3">🎉</div>
-              <p className="font-display font-semibold text-xl mb-1">You're on the list!</p>
-              <p className="text-destructive-foreground">We'll reach out when Remira is ready for you.</p>
-              <SocialLinks />
-            </div> :
-
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-              type="email"
-              required
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-5 py-3.5 rounded-full bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 font-body" />
-            
-              <button
-              type="submit"
-              className="px-7 py-3.5 rounded-full text-primary-foreground font-display font-semibold hover:scale-105 transition-transform glow-primary shrink-0 bg-[#70c5d7]">
-              
-                Join Waitlist
-              </button>
-            </form>
-          }
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="flex flex-col items-center gap-6">
+          <a
+            href={WAITLIST_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-7 py-3.5 rounded-full text-primary-foreground font-display font-semibold hover:scale-105 transition-transform glow-primary shrink-0 bg-[#70c5d7]">
+            Join Waitlist
+          </a>
+          <SocialLinks />
         </motion.div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default WaitlistCTA;

@@ -47,11 +47,8 @@ Helping you spend less time managing diabetes and more time living.
           transition={{ delay: 0.65, duration: 0.6 }}>
           
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSepWPD4eYZ5Z1N1X25qCjHdAZgXUKL86sztKkfn8cIVAHqlXg/viewform?usp=dialog"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#waitlist"
             className="inline-block px-8 py-4 rounded-full text-primary-foreground font-display font-semibold text-lg glow-primary hover:scale-105 transition-transform bg-[#79d9ec]">
-            
             Join the Waitlist
           </a>
         </motion.div>

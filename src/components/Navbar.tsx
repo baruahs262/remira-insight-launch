@@ -16,9 +16,7 @@ const Navbar = () => {
         </p>
       </div>
       <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSepWPD4eYZ5Z1N1X25qCjHdAZgXUKL86sztKkfn8cIVAHqlXg/viewform?usp=dialog"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="#waitlist"
         className="px-5 py-2.5 rounded-full text-primary-foreground font-display font-semibold text-sm hover:opacity-90 transition-opacity bg-[#79d9ec]">
         Join Waitlist
       </a>

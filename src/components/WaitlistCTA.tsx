@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-
-const WAITLIST_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSepWPD4eYZ5Z1N1X25qCjHdAZgXUKL86sztKkfn8cIVAHqlXg/viewform?usp=dialog";
+import { Input } from "@/components/ui/input";
 
 const SocialLinks = () =>
 <div className="mt-6">
@@ -49,14 +48,25 @@ const WaitlistCTA = () => {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="flex flex-col items-center gap-6">
-          <a
-            href={WAITLIST_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-7 py-3.5 rounded-full text-primary-foreground font-display font-semibold hover:scale-105 transition-transform glow-primary shrink-0 bg-[#70c5d7]">
-            Join Waitlist
-          </a>
+          className="flex flex-col items-center gap-6 w-full max-w-md mx-auto">
+          {/* Add your Formspree form action URL to the form's action attribute */}
+          <form
+            action="https://formspree.io/f/meerljrn"
+            method="POST"
+            className="flex flex-col sm:flex-row gap-3 w-full">
+            <Input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+              className="flex-1 h-12 rounded-full px-5 text-base border-border/50 bg-background"
+            />
+            <button
+              type="submit"
+              className="px-7 py-3.5 rounded-full text-primary-foreground font-display font-semibold hover:scale-105 transition-transform glow-primary shrink-0 bg-[#70c5d7] whitespace-nowrap">
+              Join Waitlist
+            </button>
+          </form>
           <SocialLinks />
         </motion.div>
       </div>

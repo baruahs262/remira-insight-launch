@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
-import { Activity, Brain, Calendar, Moon, Target, TrendingUp } from "lucide-react";
+import { Activity, Brain, Moon, Target, TrendingUp } from "lucide-react";
 import insightDetailScreenshot from "@/assets/insight-detail-screenshot.png";
 import appScore from "@/assets/app-score.jpeg";
 import appRiskHour from "@/assets/app-risk-hour.jpeg";
-import appCalendar from "@/assets/app-calendar.jpeg";
 import appTypicalDay from "@/assets/app-typical-day.jpeg";
 import appInsights from "@/assets/app-insights.png";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 const features = [
 {
@@ -19,12 +25,6 @@ const features = [
   title: "CGM Integration",
   description: "Connects to your continuous glucose monitor for seamless, real-time data analysis.",
   image: appTypicalDay
-},
-{
-  icon: Calendar,
-  title: "Calendar Sync",
-  description: "Integrates with Google Calendar to link blood glucose trends with your daily routine.",
-  image: appCalendar
 },
 {
   icon: Moon,
@@ -45,16 +45,6 @@ const features = [
   image: appRiskHour
 }];
 
-
-const cardVariants = {
-  hidden: { y: 40, opacity: 0 },
-  visible: (i: number) => ({
-    y: 0,
-    opacity: 1,
-    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const }
-  })
-};
-
 const Features = () => {
   return (
     <section id="features" className="section-padding">
@@ -65,35 +55,35 @@ const Features = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16">
-          
+
           <p className="font-display font-medium tracking-widest uppercase text-sm mb-3 text-blue-600">Features</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             More than just <span className="text-gradient text-blue-600">charts.</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">Remira doesn't show you what you already know — 
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">Remira doesn't show you what you already know —
 It finds what you miss and helps you act on it.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {features.map((feature, i) =>
-          <motion.div
-            key={feature.title}
-            custom={i}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-60px" }}
-            variants={cardVariants}
-            className="glass-card rounded-xl p-7 group transition-colors border-blue-600">
-            
-              <feature.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="font-display font-semibold text-lg mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
-              {'image' in feature && feature.image && (
-                <img src={feature.image} alt={feature.title} className="mt-4 rounded-lg w-full h-auto border border-border/30" loading="lazy" />
+        <div className="px-12">
+          <Carousel opts={{ align: "start", loop: true }}>
+            <CarouselContent>
+              {features.map((feature) =>
+              <CarouselItem key={feature.title} className="md:basis-1/2 lg:basis-1/3">
+                <div className="glass-card rounded-xl p-7 group transition-colors border-blue-600 h-full">
+                  <feature.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-display font-semibold text-lg mb-2">{feature.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+                  {'image' in feature && feature.image && (
+                    <img src={feature.image} alt={feature.title} className="mt-4 rounded-lg w-full h-auto border border-border/30" loading="lazy" />
+                  )}
+                </div>
+              </CarouselItem>
               )}
-            </motion.div>
-          )}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </div>
     </section>);

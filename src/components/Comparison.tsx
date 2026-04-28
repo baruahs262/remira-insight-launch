@@ -3,6 +3,11 @@ import { Check, X } from "lucide-react";
 
 const comparison = [
 {
+  label: "Approach",
+  typical: "Reflective — shows what already happened",
+  remira: "Predictive — forecasts what's coming next"
+},
+{
   label: "Glucose view",
   typical: "Dot chart view",
   remira: "Color-coded view integrated with calendar"
@@ -10,7 +15,7 @@ const comparison = [
 {
   label: "Trends",
   typical: "Long-term trends only",
-  remira: "Short-term and long-term trends"
+  remira: "Short-term and long-term trends, predicted ahead"
 },
 {
   label: "Adjustments",
@@ -36,9 +41,11 @@ const Comparison = () => {
           className="text-center mb-14">
           
           <p className="font-display font-medium tracking-widest uppercase text-sm mb-3 text-blue-600">Why Remira</p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             See the difference <span className="text-gradient text-blue-600">for yourself.</span>
           </h2>
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">Every other app on the market is reflective. Remira is the only one that's predictive.
+          </p>
         </motion.div>
 
         <motion.div

@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
-import { Activity, Brain, Moon, Target, TrendingUp } from "lucide-react";
+import { Activity, Brain, CloudSun, FileText, Moon, Target, TrendingUp } from "lucide-react";
 import insightDetailScreenshot from "@/assets/insight-detail-screenshot.png";
 import appScore from "@/assets/app-score.jpeg";
 import appRiskHour from "@/assets/app-risk-hour.jpeg";
 import appTypicalDay from "@/assets/app-typical-day.jpeg";
 import appInsights from "@/assets/app-insights.png";
+import appDailyReport from "@/assets/app-daily-report.png";
+import appGlucoseForecast from "@/assets/app-glucose-forecast.png";
 import {
   Carousel,
   CarouselContent,
@@ -15,9 +17,21 @@ import {
 
 const features = [
 {
+  icon: FileText,
+  title: "Daily Report",
+  description: "Every morning, get a personalized report predicting the patterns most likely to show up today — so you know exactly what to look out for.",
+  image: appDailyReport
+},
+{
+  icon: CloudSun,
+  title: "Glucose Forecast",
+  description: "We forecast your glucose hour by hour so you can see the highs and lows coming before they happen.",
+  image: appGlucoseForecast
+},
+{
   icon: Brain,
   title: "AI-Powered Insights",
-  description: "Detects patterns you can't see, then gives you actionable advice, not just data.",
+  description: "Predicts patterns you can't see, then gives you actionable advice, not just data.",
   image: appInsights
 },
 {
@@ -29,7 +43,7 @@ const features = [
 {
   icon: Moon,
   title: "Nighttime Planning",
-  description: "Dedicated overnight analysis to prevent lows while you sleep.",
+  description: "Dedicated overnight analysis to predict and prevent lows while you sleep.",
   image: insightDetailScreenshot
 },
 {
@@ -58,10 +72,9 @@ const Features = () => {
 
           <p className="font-display font-medium tracking-widest uppercase text-sm mb-3 text-blue-600">Features</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            More than just <span className="text-gradient text-blue-600">charts.</span>
+            Not reflective. <span className="text-gradient text-blue-600">Predictive.</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">Remira doesn't show you what you already know —
-It finds what you miss and helps you act on it.
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">Other apps show you what already happened. Remira forecasts your glucose, predicts the patterns coming next, and tells you what to look out for — before it happens.
           </p>
         </motion.div>
 

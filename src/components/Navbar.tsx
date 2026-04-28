@@ -16,9 +16,11 @@ const Navbar = () => {
         </p>
       </div>
       <a
-        href="#waitlist"
+        href="https://apps.apple.com/us/app/remira-ai/id6759989867"
+        target="_blank"
+        rel="noopener noreferrer"
         className="px-5 py-2.5 rounded-full text-primary-foreground font-display font-semibold text-sm hover:opacity-90 transition-opacity bg-[#79d9ec]">
-        Join Waitlist
+        See in App Store
       </a>
     </motion.nav>);
 };

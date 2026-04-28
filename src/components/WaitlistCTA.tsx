@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { Input } from "@/components/ui/input";
 
 const SocialLinks = () =>
-<div className="mt-6">
+<div className="mt-8">
     <p className="text-sm mb-4 text-primary font-bold">Follow us for updates</p>
     <div className="flex items-center justify-center gap-5">
       <a href="https://instagram.com/remira.app" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
@@ -26,20 +25,20 @@ const SocialLinks = () =>
 
 const WaitlistCTA = () => {
   return (
-    <section id="waitlist" className="section-padding">
+    <section id="get-the-app" className="section-padding">
       <div className="max-w-2xl mx-auto text-center">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}>
-          
-          <p className="text-primary font-display font-medium tracking-widest uppercase text-sm mb-3">Early Access</p>
+
+          <p className="text-primary font-display font-medium tracking-widest uppercase text-sm mb-3">Available Now</p>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Be the first to try <span className="text-gradient">Remira</span>
+            Try the only predictive Type-1 app on <span className="text-gradient">Remira</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-10">
-            Sign up for early access and help us build the future of Type-1 management.
+            Stop reacting to your glucose — start predicting it. Download Remira on the App Store and see what's coming, hour by hour.
           </p>
         </motion.div>
 
@@ -49,24 +48,13 @@ const WaitlistCTA = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.5 }}
           className="flex flex-col items-center gap-6 w-full max-w-md mx-auto">
-          {/* Add your Formspree form action URL to the form's action attribute */}
-          <form
-            action="https://formspree.io/f/meerljrn"
-            method="POST"
-            className="flex flex-col sm:flex-row gap-3 w-full">
-            <Input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-              className="flex-1 h-12 rounded-full px-5 text-base border-border/50 bg-background"
-            />
-            <button
-              type="submit"
-              className="px-7 py-3.5 rounded-full text-primary-foreground font-display font-semibold hover:scale-105 transition-transform glow-primary shrink-0 bg-[#70c5d7] whitespace-nowrap">
-              Join Waitlist
-            </button>
-          </form>
+          <a
+            href="https://apps.apple.com/us/app/remira-ai/id6759989867"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 rounded-full text-primary-foreground font-display font-semibold text-lg hover:scale-105 transition-transform glow-primary bg-[#70c5d7] whitespace-nowrap">
+            See in App Store
+          </a>
           <SocialLinks />
         </motion.div>
       </div>

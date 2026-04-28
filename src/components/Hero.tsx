@@ -14,7 +14,7 @@ const Hero = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8">
-          
+
           <img src={remiraIcon} alt="" className="w-32 h-32 mx-auto mb-4 animate-float" />
           <img src={remiraTextLogo} alt="Remira" className="h-12 mx-auto" />
         </motion.div>
@@ -35,8 +35,8 @@ const Hero = () => {
           <span className="text-white">Designed by Type-1 Diabetics</span>
         </motion.p>
 
-        <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5, duration: 0.6 }} className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">Remira uses AI to turn your CGM data into insights hour by hour — 
-Helping you spend less time managing diabetes and more time living.
+        <motion.p initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5, duration: 0.6 }} className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">Remira uses AI to forecast your glucose, predict patterns before they hit, and turn your CGM data into insights hour by hour —
+helping you spend less time managing diabetes and more time living.
 
 
         </motion.p>
@@ -45,11 +45,13 @@ Helping you spend less time managing diabetes and more time living.
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.65, duration: 0.6 }}>
-          
+
           <a
-            href="#waitlist"
+            href="https://apps.apple.com/us/app/remira-ai/id6759989867"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block px-8 py-4 rounded-full text-primary-foreground font-display font-semibold text-lg glow-primary hover:scale-105 transition-transform bg-[#79d9ec]">
-            Join the Waitlist
+            See in App Store
           </a>
         </motion.div>
       </div>

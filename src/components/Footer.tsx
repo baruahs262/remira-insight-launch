@@ -22,7 +22,7 @@ const Footer = () => {
           className="flex items-center gap-6"
         >
           <a
-            href="https://www.instagram.com/remira.app/?hl=en"
+            href="https://www.instagram.com/remira.t1d/?hl=en"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
@@ -33,7 +33,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="https://www.tiktok.com/@remira.app"
+            href="https://www.tiktok.com/@remira.t1d"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"

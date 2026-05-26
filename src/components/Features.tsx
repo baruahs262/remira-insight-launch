@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
-import { Activity, Brain, CloudSun, FileText, Moon, Target, TrendingUp } from "lucide-react";
-import insightDetailScreenshot from "@/assets/insight-detail-screenshot.png";
-import appScore from "@/assets/app-score.jpeg";
-import appRiskHour from "@/assets/app-risk-hour.jpeg";
-import appTypicalDay from "@/assets/app-typical-day.jpeg";
-import appInsights from "@/assets/app-insights.png";
-import appDailyReport from "@/assets/app-daily-report.png";
-import appGlucoseForecast from "@/assets/app-glucose-forecast.png";
+import { Brain, CloudSun, FileText, Orbit, Target, TrendingUp } from "lucide-react";
+import dailyReportNew from "@/assets/daily_report_new.png";
+import forecastNew from "@/assets/forecast_new.png";
+import insightDetailNew from "@/assets/insight_detail_new.png";
+import insightsNew from "@/assets/insights_new.png";
+import orbitNew from "@/assets/orbit_new.png";
+import homeNew from "@/assets/home_new.png";
 import {
   Carousel,
   CarouselContent,
@@ -20,43 +19,37 @@ const features = [
   icon: FileText,
   title: "Daily Report",
   description: "Every morning, get a personalized report predicting the patterns most likely to show up today — so you know exactly what to look out for.",
-  image: appDailyReport
+  image: dailyReportNew
 },
 {
   icon: CloudSun,
   title: "Glucose Forecast",
   description: "We forecast your glucose hour by hour so you can see the highs and lows coming before they happen.",
-  image: appGlucoseForecast
-},
-{
-  icon: Brain,
-  title: "AI-Powered Insights",
-  description: "Predicts patterns you can't see, then gives you actionable advice, not just data.",
-  image: appInsights
-},
-{
-  icon: Activity,
-  title: "CGM Integration",
-  description: "Connects to your continuous glucose monitor for seamless, real-time data analysis.",
-  image: appTypicalDay
-},
-{
-  icon: Moon,
-  title: "Nighttime Planning",
-  description: "Dedicated overnight analysis to predict and prevent lows while you sleep.",
-  image: insightDetailScreenshot
-},
-{
-  icon: Target,
-  title: "Daily Score",
-  description: "A personalized daily score based on your goals — track progress at a glance.",
-  image: appScore
+  image: forecastNew
 },
 {
   icon: TrendingUp,
   title: "Trend Detection",
   description: "Short-term and long-term trend analysis with predictive alerts for highs and lows.",
-  image: appRiskHour
+  image: insightDetailNew
+},
+{
+  icon: Brain,
+  title: "AI-Powered Insights",
+  description: "Surface patterns you'd never spot on your own. Each day brings a fresh constellation of insights, revealing the new trends hidden in your data.",
+  image: insightsNew
+},
+{
+  icon: Orbit,
+  title: "Orbit",
+  description: "Connects to your continuous glucose monitor for seamless, real-time data — and helps you align your daily routine with your glucose.",
+  image: orbitNew
+},
+{
+  icon: Target,
+  title: "Daily Score",
+  description: "A personalized daily score based on your goals — track progress at a glance.",
+  image: homeNew
 }];
 
 const Features = () => {
@@ -74,7 +67,7 @@ const Features = () => {
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
             Not reflective. <span className="text-gradient text-blue-600">Predictive.</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">Other apps show you what already happened. Remira forecasts your glucose, predicts the patterns coming next, and tells you what to look out for — before it happens.
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">Remira forecasts your glucose, predicts the patterns coming next, and tells you what to look out for — before it happens.
           </p>
         </motion.div>
 

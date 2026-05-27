@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Opening Remira…</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" href="/remira-favicon.png" />
+
+    <!-- Universal App Store link. iOS hands apps.apple.com off to the App Store app;
+         everywhere else it opens the web App Store page. -->
+    <meta http-equiv="refresh" content="0; url=https://apps.apple.com/us/app/remira-ai/id6759989867" />
+
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: #0b0f1a;
+        color: #e8edf7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 24px;
+        gap: 20px;
+      }
+      .logo { width: 64px; height: 64px; border-radius: 16px; }
+      .spinner {
+        width: 28px; height: 28px;
+        border: 3px solid rgba(255,255,255,0.2);
+        border-top-color: #2563eb;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      h1 { font-size: 20px; font-weight: 600; margin: 0; }
+      p { font-size: 15px; color: #9aa6bd; margin: 0; max-width: 320px; line-height: 1.5; }
+      a.btn {
+        display: inline-block;
+        margin-top: 4px;
+        padding: 12px 22px;
+        background: #2563eb;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="logo" src="/remira-favicon.png" alt="Remira" />
+    <div class="spinner" aria-hidden="true"></div>
+    <h1>Taking you to the App Store…</h1>
+    <p>If you're not redirected automatically, tap the button below.</p>
+    <a class="btn" id="store-link" href="https://apps.apple.com/us/app/remira-ai/id6759989867">Open in the App Store</a>
+
+    <script>
+      (function () {
+        var APP_STORE_URL = "https://apps.apple.com/us/app/remira-ai/id6759989867";
+        // itms-apps:// opens the native App Store app directly (no Safari hand-off step).
+        var ITMS_URL = "itms-apps://apps.apple.com/us/app/remira-ai/id6759989867";
+
+        var ua = navigator.userAgent || "";
+        var isIOS = /iPad|iPhone|iPod/.test(ua) ||
+                    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+        // On iOS, try the itms-apps scheme first — it pops the App Store app straight
+        // out of an in-app browser (TikTok/Instagram). Fall back to the https URL,
+        // which iOS also routes to the App Store and every other platform opens normally.
+        if (isIOS) {
+          try { window.location.replace(ITMS_URL); } catch (e) {}
+          setTimeout(function () {
+            window.location.replace(APP_STORE_URL);
+          }, 350);
+        } else {
+          window.location.replace(APP_STORE_URL);
+        }
+      })();
+    </script>
+  </body>
+</html>

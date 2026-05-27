@@ -7,10 +7,6 @@
     <meta name="robots" content="noindex" />
     <link rel="icon" type="image/png" href="/remira-favicon.png" />
 
-    <!-- Universal App Store link. iOS hands apps.apple.com off to the App Store app;
-         everywhere else it opens the web App Store page. -->
-    <meta http-equiv="refresh" content="0; url=https://apps.apple.com/us/app/remira-ai/id6759989867" />
-
     <style>
       :root { color-scheme: light; }
       * { box-sizing: border-box; }
@@ -49,14 +45,93 @@
         font-weight: 600;
         font-size: 15px;
       }
+
+      /* In-app browser (TikTok / Instagram / etc.) instructions — hidden by default. */
+      #inapp { display: none; }
+      #inapp .card {
+        background: #131a2b;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        padding: 22px 20px;
+        max-width: 360px;
+        width: 100%;
+        text-align: left;
+      }
+      #inapp .card h2 {
+        font-size: 17px;
+        font-weight: 600;
+        margin: 0 0 14px;
+        text-align: center;
+      }
+      #inapp .steps {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      #inapp .steps li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 15px;
+        line-height: 1.45;
+        color: #d6deee;
+      }
+      #inapp .num {
+        flex: 0 0 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: #2563eb;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #inapp .dots {
+        font-weight: 700;
+        letter-spacing: 1px;
+        background: rgba(255,255,255,0.12);
+        padding: 1px 8px;
+        border-radius: 6px;
+      }
+      #inapp .hint {
+        margin: 16px auto 0;
+        font-size: 13px;
+        color: #7d8aa3;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
     <img class="logo" src="/remira-favicon.png" alt="Remira" />
-    <div class="spinner" aria-hidden="true"></div>
-    <h1>Taking you to the App Store…</h1>
-    <p>If you're not redirected automatically, tap the button below.</p>
-    <a class="btn" id="store-link" href="https://apps.apple.com/us/app/remira-ai/id6759989867">Open in the App Store</a>
+
+    <!-- Default view: shown in real browsers while we redirect to the App Store. -->
+    <div id="redirecting">
+      <div class="spinner" aria-hidden="true" style="margin: 0 auto 16px;"></div>
+      <h1>Taking you to the App Store…</h1>
+      <p>If you're not redirected automatically, tap the button below.</p>
+      <a class="btn" id="store-link" href="https://apps.apple.com/us/app/remira-ai/id6759989867" style="margin-top: 16px;">Open in the App Store</a>
+    </div>
+
+    <!-- In-app browser view: TikTok blocks the App Store, so guide users out first. -->
+    <div id="inapp">
+      <h1 style="margin-bottom: 4px;">Almost there!</h1>
+      <p style="margin: 0 auto 18px;">TikTok blocks the App Store from inside the app. Open this page in your browser first:</p>
+      <div class="card">
+        <h2>Open Remira in 3 steps</h2>
+        <ol class="steps">
+          <li><span class="num">1</span><span>Tap the <span class="dots">• • •</span> menu in the top-right corner of the screen.</span></li>
+          <li><span class="num">2</span><span>Tap <strong>“Open in browser.”</strong></span></li>
+          <li><span class="num">3</span><span>Once it opens, tap <strong>“Open in the App Store”</strong> below.</span></li>
+        </ol>
+        <p class="hint">After step 2 this page reloads in Safari/Chrome — that's when the button works.</p>
+      </div>
+      <a class="btn" href="https://apps.apple.com/us/app/remira-ai/id6759989867" style="margin-top: 20px;">Open in the App Store</a>
+    </div>
 
     <script>
       (function () {
@@ -68,8 +143,20 @@
         var isIOS = /iPad|iPhone|iPod/.test(ua) ||
                     (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
-        // On iOS, try the itms-apps scheme first — it pops the App Store app straight
-        // out of an in-app browser (TikTok/Instagram). Fall back to the https URL,
+        // Detect in-app browsers (web views) that block the App Store hand-off.
+        // TikTok: "BytedanceWebview"/"musical_ly"/"Bytedance"/"trill". We also catch
+        // Instagram/Facebook web views since they have the same limitation.
+        var isInApp = /BytedanceWebview|musical_ly|Bytedance|trill|TikTok|Instagram|FBAN|FBAV|FB_IAB/i.test(ua);
+
+        if (isInApp) {
+          // Don't auto-redirect — it just gets blocked. Show the "open in browser" steps.
+          document.getElementById("redirecting").style.display = "none";
+          document.getElementById("inapp").style.display = "block";
+          return;
+        }
+
+        // Real browser: redirect straight to the App Store.
+        // On iOS, try the itms-apps scheme first, then fall back to the https URL,
         // which iOS also routes to the App Store and every other platform opens normally.
         if (isIOS) {
           try { window.location.replace(ITMS_URL); } catch (e) {}

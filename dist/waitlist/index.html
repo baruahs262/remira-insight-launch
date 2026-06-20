@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Remira for Android — Join the Waitlist</title>
+    <meta
+      name="description"
+      content="Remira — your personal Type-1 AI assistant — is coming to Android. Join the waitlist and be the first to know when it launches."
+    />
+    <link rel="icon" type="image/png" href="/remira-favicon.png" />
+
+    <!-- Social share preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Remira for Android — Join the Waitlist" />
+    <meta
+      property="og:description"
+      content="Your personal Type-1 AI assistant is coming to Android. Join the waitlist to get early access."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://remira-ai.com/waitlist/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #000000;
+        --card: #0d121d;
+        --border: rgba(255, 255, 255, 0.08);
+        --text: #f2f4f8;
+        --muted: #9aa6bd;
+        --accent: #79d9ec;
+        --accent-2: #70c5d7;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      .display {
+        font-family: "Space Grotesk", "Inter", sans-serif;
+      }
+
+      /* Ambient glow */
+      .glow {
+        position: fixed;
+        top: -10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 560px;
+        max-width: 120vw;
+        height: 560px;
+        border-radius: 50%;
+        background: rgba(121, 217, 236, 0.10);
+        filter: blur(120px);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .wrap {
+        position: relative;
+        z-index: 1;
+        max-width: 520px;
+        margin: 0 auto;
+        padding: 40px 22px 56px;
+        text-align: center;
+      }
+
+      .logo {
+        width: 76px;
+        height: 76px;
+        border-radius: 20px;
+        margin: 0 auto 18px;
+        display: block;
+        animation: float 5s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        background: rgba(121, 217, 236, 0.08);
+        border: 1px solid rgba(121, 217, 236, 0.25);
+        padding: 7px 14px;
+        border-radius: 999px;
+        margin-bottom: 20px;
+      }
+      .badge svg { width: 14px; height: 14px; }
+
+      h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: clamp(28px, 8vw, 40px);
+        line-height: 1.08;
+        margin: 0 0 14px;
+      }
+      h1 .grad {
+        background: linear-gradient(90deg, var(--accent) 0%, #a6e9f5 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .sub {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.55;
+        margin: 0 auto 28px;
+        max-width: 420px;
+      }
+
+      /* Screenshot strip */
+      .shots {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin: 0 auto 32px;
+        padding: 4px 0;
+      }
+      .shots img {
+        width: 31%;
+        max-width: 130px;
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        box-shadow: 0 18px 50px -20px rgba(0, 0, 0, 0.9);
+      }
+      .shots img:nth-child(2) {
+        transform: translateY(-12px) scale(1.05);
+        z-index: 2;
+        box-shadow: 0 24px 60px -18px rgba(121, 217, 236, 0.25);
+      }
+
+      /* Form card */
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 24px 20px;
+        text-align: left;
+      }
+      .card h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0 0 4px;
+        text-align: center;
+      }
+      .card .note {
+        color: var(--muted);
+        font-size: 13.5px;
+        text-align: center;
+        margin: 0 0 18px;
+      }
+      form { display: flex; flex-direction: column; gap: 12px; }
+      input[type="email"] {
+        width: 100%;
+        padding: 15px 16px;
+        font-size: 16px; /* 16px avoids iOS/Android zoom-on-focus */
+        font-family: inherit;
+        color: var(--text);
+        background: #070a12;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        outline: none;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      }
+      input[type="email"]::placeholder { color: #5e6b82; }
+      input[type="email"]:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(121, 217, 236, 0.15);
+      }
+      button {
+        width: 100%;
+        padding: 15px 16px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: #04141a;
+        background: var(--accent);
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: transform 0.12s ease, opacity 0.15s ease;
+        box-shadow: 0 0 40px -10px rgba(121, 217, 236, 0.5);
+      }
+      button:hover { transform: translateY(-1px); }
+      button:active { transform: translateY(0); }
+      button:disabled { opacity: 0.6; cursor: default; transform: none; }
+
+      .err {
+        display: none;
+        color: #ff8a8a;
+        font-size: 13.5px;
+        text-align: center;
+        margin: 2px 0 0;
+      }
+      .fine {
+        color: #6b7790;
+        font-size: 12px;
+        text-align: center;
+        margin: 14px 0 0;
+        line-height: 1.5;
+      }
+
+      /* Success state */
+      .success {
+        display: none;
+        text-align: center;
+        padding: 8px 4px;
+      }
+      .success .check {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: rgba(121, 217, 236, 0.12);
+        border: 1px solid rgba(121, 217, 236, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 14px;
+      }
+      .success .check svg { width: 28px; height: 28px; color: var(--accent); }
+      .success h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 20px;
+        margin: 0 0 6px;
+      }
+      .success p { color: var(--muted); font-size: 14.5px; margin: 0; line-height: 1.55; }
+
+      /* Footer */
+      .foot { margin-top: 30px; }
+      .foot .social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        margin-bottom: 18px;
+      }
+      .foot .social a { color: var(--text); opacity: 0.75; transition: opacity 0.15s ease, transform 0.15s ease; }
+      .foot .social a:hover { opacity: 1; transform: scale(1.1); }
+      .foot .social svg { width: 22px; height: 22px; fill: currentColor; }
+      .foot a.home {
+        color: var(--muted);
+        font-size: 13.5px;
+        text-decoration: none;
+      }
+      .foot a.home:hover { color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <div class="glow" aria-hidden="true"></div>
+
+    <main class="wrap">
+      <img class="logo" src="/remira-favicon.png" alt="Remira" />
+
+      <span class="badge">
+        <!-- Android robot -->
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24a11.46 11.46 0 00-8.94 0L5.65 5.67c-.19-.29-.57-.38-.85-.2-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 001 18h22a10.78 10.78 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z" />
+        </svg>
+        Android · Coming soon
+      </span>
+
+      <h1>Remira is coming<br /><span class="grad">to Android</span></h1>
+      <p class="sub">
+        Your personal Type-1 AI assistant — glucose forecasts, predictive insights, and daily
+        reports. Already live on iPhone. Join the waitlist and we'll email you the moment Android
+        launches.
+      </p>
+
+      <div class="shots">
+        <img src="/waitlist/insights_new.png" alt="Remira AI insights screen" loading="lazy" />
+        <img src="/waitlist/home_new.png" alt="Remira home screen" loading="lazy" />
+        <img src="/waitlist/forecast_new.png" alt="Remira glucose forecast screen" loading="lazy" />
+      </div>
+
+      <div class="card">
+        <!-- Form view -->
+        <div id="form-view">
+          <h2>Get early access</h2>
+          <p class="note">Be first in line when Remira hits the Play Store.</p>
+          <form id="waitlist-form" novalidate>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              inputmode="email"
+              placeholder="you@email.com"
+              required
+            />
+            <!-- Helps you tell Android signups apart in Formspree -->
+            <input type="hidden" name="platform" value="Android" />
+            <input type="hidden" name="_subject" value="New Android waitlist signup 🤖" />
+            <button type="submit" id="submit-btn">Join the waitlist</button>
+            <p class="err" id="error-msg">Something went wrong. Please try again.</p>
+          </form>
+          <p class="fine">No spam. One email when Android is ready — that's it.</p>
+        </div>
+
+        <!-- Success view -->
+        <div class="success" id="success-view">
+          <div class="check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6L9 17l-5-5" />
+            </svg>
+          </div>
+          <h2>You're on the list! 🎉</h2>
+          <p>Thanks for signing up. We'll email you the second Remira lands on Android.</p>
+        </div>
+      </div>
+
+      <div class="foot">
+        <div class="social">
+          <a href="https://instagram.com/remira.t1d" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
+          </a>
+          <a href="https://tiktok.com/@remira.t1d" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg viewBox="0 0 448 512"><path d="M448 209.91a210.06 210.06 0 01-122.77-39.25v178.72A162.55 162.55 0 11185 188.31v89.89a74.62 74.62 0 1052.23 71.18V0h88a121.18 121.18 0 001.86 22.17A122.18 122.18 0 00381 102.39a121.43 121.43 0 0067 20.14z" /></svg>
+          </a>
+          <a href="https://x.com/RemiraApp" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+          </a>
+        </div>
+        <a class="home" href="/">← Back to remira-ai.com</a>
+      </div>
+    </main>
+
+    <script>
+      // ============================================================
+      //  FORMSPREE SETUP — replace the placeholder below.
+      //  1. Create a free form at https://formspree.io  (set the
+      //     notification email to shaurya.baruah@gmail.com)
+      //  2. Copy its form ID (the part after /f/ — e.g. "xeozgabc")
+      //  3. Paste it between the quotes on the next line.
+      // ============================================================
+      var FORMSPREE_ID = "meerljrn";
+
+      var form = document.getElementById("waitlist-form");
+      var emailInput = document.getElementById("email");
+      var submitBtn = document.getElementById("submit-btn");
+      var errorMsg = document.getElementById("error-msg");
+      var formView = document.getElementById("form-view");
+      var successView = document.getElementById("success-view");
+
+      function showError(msg) {
+        errorMsg.textContent = msg;
+        errorMsg.style.display = "block";
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        errorMsg.style.display = "none";
+
+        var email = emailInput.value.trim();
+        // Basic email sanity check.
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          showError("Please enter a valid email address.");
+          return;
+        }
+
+        if (FORMSPREE_ID === "YOUR_FORM_ID") {
+          showError("Waitlist isn't connected yet — add your Formspree ID.");
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Joining…";
+
+        fetch("https://formspree.io/f/" + FORMSPREE_ID, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(form),
+        })
+          .then(function (res) {
+            if (res.ok) {
+              formView.style.display = "none";
+              successView.style.display = "block";
+            } else {
+              return res.json().then(function (data) {
+                var m =
+                  data && data.errors && data.errors.length
+                    ? data.errors.map(function (x) { return x.message; }).join(", ")
+                    : "Something went wrong. Please try again.";
+                throw new Error(m);
+              });
+            }
+          })
+          .catch(function (err) {
+            showError(err.message || "Network error. Please try again.");
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Join the waitlist";
+          });
+      });
+    </script>
+  </body>
+</html>

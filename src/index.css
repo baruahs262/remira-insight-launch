@@ -6,17 +6,24 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 95%;
+    --background: 232 26% 5%;
+    --foreground: 0 0% 96%;
 
-    --card: 220 18% 8%;
-    --card-foreground: 0 0% 95%;
+    --card: 231 22% 9%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 220 18% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 231 22% 9%;
+    --popover-foreground: 0 0% 96%;
 
     --primary: 217 91% 60%;
     --primary-foreground: 220 20% 4%;
+
+    /* Remira pre-launch accents (matched to the app UI) */
+    --mint: 152 64% 50%;
+    --mint-foreground: 160 40% 8%;
+    --violet: 259 84% 70%;
+    --amber: 32 95% 58%;
+    --rose: 349 89% 64%;
 
     --secondary: 220 16% 14%;
     --secondary-foreground: 0 0% 85%;
@@ -86,4 +93,47 @@
   .section-padding {
     @apply py-24 md:py-32 px-6 md:px-8;
   }
+
+  /* ── Pre-launch accents ─────────────────────────────────────────── */
+  .text-mint { color: hsl(var(--mint)); }
+  .text-violet { color: hsl(var(--violet)); }
+  .text-amber { color: hsl(var(--amber)); }
+
+  .mint-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(100deg, hsl(var(--mint)), hsl(174 70% 62%));
+  }
+  .violet-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(100deg, hsl(var(--violet)), hsl(288 78% 72%));
+  }
+
+  .glow-mint {
+    box-shadow: 0 10px 40px -12px hsl(var(--mint) / 0.55);
+  }
+  .glow-violet {
+    box-shadow: 0 10px 50px -14px hsl(var(--violet) / 0.5);
+  }
+
+  .surface {
+    @apply bg-[hsl(231_22%_9%)] border border-white/[0.06];
+  }
+  .surface-hover {
+    @apply transition-all duration-300 hover:border-white/15 hover:bg-[hsl(231_22%_11%)];
+  }
+
+  /* Subtle dotted grid backdrop */
+  .bg-grid {
+    background-image: radial-gradient(hsl(0 0% 100% / 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }

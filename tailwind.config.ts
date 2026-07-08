@@ -53,6 +53,13 @@ export default {
         },
         "surface-elevated": "hsl(var(--surface-elevated))",
         "text-dim": "hsl(var(--text-dim))",
+        mint: {
+          DEFAULT: "hsl(var(--mint))",
+          foreground: "hsl(var(--mint-foreground))",
+        },
+        violet: "hsl(var(--violet))",
+        amber: "hsl(var(--amber))",
+        rose: "hsl(var(--rose))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

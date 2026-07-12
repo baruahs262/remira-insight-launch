@@ -22,9 +22,41 @@
     <meta name="twitter:image" content="https://remira-ai.com/og-image.png" />
     <script type="module" crossorigin src="/assets/index-BfWb9pxm.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-CeiV5FOh.css">
+
+    <style>
+      /* Floating "Join Premium waitlist" button — links to the /premium page.
+         Self-contained overlay so it works on top of the existing app. */
+      #remira-premium-cta{
+        position:fixed; right:18px; bottom:18px; z-index:2147483000;
+        display:inline-flex; align-items:center; gap:8px;
+        padding:14px 22px; border-radius:999px;
+        background:#12B884; color:#fff; text-decoration:none;
+        font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+        font-weight:700; font-size:15px; line-height:1; letter-spacing:.01em;
+        box-shadow:0 12px 30px -8px rgba(18,184,132,.6), 0 2px 8px rgba(0,0,0,.14);
+        transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+      }
+      #remira-premium-cta:hover{
+        background:#0E9E70; transform:translateY(-2px);
+        box-shadow:0 18px 36px -10px rgba(18,184,132,.7), 0 3px 10px rgba(0,0,0,.16);
+      }
+      #remira-premium-cta:active{ transform:translateY(0); }
+      #remira-premium-cta .spark{ font-size:16px; }
+      @media (max-width:520px){
+        #remira-premium-cta{ right:12px; bottom:12px; padding:13px 18px; font-size:14px; }
+      }
+      @media (prefers-reduced-motion:reduce){
+        #remira-premium-cta{ transition:none; }
+      }
+    </style>
   </head>
 
   <body>
     <div id="root"></div>
+
+    <a id="remira-premium-cta" href="/premium" aria-label="Join the Remira Premium waitlist">
+      <span class="spark" aria-hidden="true">&#10024;</span>
+      <span>Join Premium waitlist</span>
+    </a>
   </body>
 </html>

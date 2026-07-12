@@ -455,13 +455,30 @@ footer{background:#12181d;color:#cbd3da;}
   .wrap-frame{--sw:0.55;}
 }
 @media(min-width:1360px){
-  /* wide desktop: giant monument left, the three floating phones to its right, all on one screen */
-  .hero-mid{flex-direction:row;align-items:center;justify-content:flex-start;gap:clamp(18px,2.4vw,40px);}
+  /* wide desktop: giant monument left, the three floating phones to its right, all on one screen.
+     Phones grow with the screen (scales bump at 1536/1728/1920) to fill the row beside the
+     headline instead of leaving dead space, while staying within one screen height. */
+  .hero-mid{flex-direction:row;align-items:center;justify-content:flex-start;gap:clamp(16px,2vw,34px);}
   .hero-title{flex:0 0 auto;}
-  .hero-phones{flex:1 1 0;justify-content:center;align-self:center;gap:clamp(8px,1vw,16px);}
-  .trace-frame{--st:0.57;}
-  .alert-frame{--s:0.455;}
-  .wrap-frame{--sw:0.56;}
+  .hero-phones{flex:1 1 0;justify-content:center;align-self:center;gap:clamp(10px,1.1vw,20px);}
+  .trace-frame{--st:0.61;}
+  .alert-frame{--s:0.492;}
+  .wrap-frame{--sw:0.622;}
+}
+@media(min-width:1536px){
+  .trace-frame{--st:0.695;}
+  .alert-frame{--s:0.560;}
+  .wrap-frame{--sw:0.709;}
+}
+@media(min-width:1728px){
+  .trace-frame{--st:0.745;}
+  .alert-frame{--s:0.601;}
+  .wrap-frame{--sw:0.760;}
+}
+@media(min-width:1920px){
+  .trace-frame{--st:0.815;}
+  .alert-frame{--s:0.657;}
+  .wrap-frame{--sw:0.832;}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
@@ -1248,6 +1265,8 @@ footer{background:#12181d;color:#cbd3da;}
   root.querySelectorAll('.rmw-closewrap').forEach(function(b){b.addEventListener('click',close);});
 })();
 </script>
+
+
 
 
 

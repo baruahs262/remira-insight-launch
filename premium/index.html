@@ -420,6 +420,16 @@ footer{background:#12181d;color:#cbd3da;}
 .foot .fine{color:#8b96a0;font-size:13.5px;max-width:640px;line-height:1.6;}
 .foot .cr{color:#5f6a73;font-size:13px;}
 
+/* ===== MOBILE: stack the three phones vertically, each near full width ===== */
+@media(max-width:759px){
+  .hero-phones{flex-direction:column;align-items:center;justify-content:flex-start;gap:38px;width:100%;}
+  .hero-phones::before{display:none;} /* the wide negative-inset blur can overflow/glitch when zoomed */
+  .phone-col{width:100%;max-width:100%;gap:14px;}
+  .trace-frame{--st:0.80;}
+  .alert-frame{--s:0.64;}
+  .wrap-frame{--sw:0.80;}
+}
+
 @media(min-width:760px){
   .nav{display:flex;}
   .price .cols{grid-template-columns:1fr 1fr;}
@@ -1207,7 +1217,15 @@ footer{background:#12181d;color:#cbd3da;}
   dots.forEach(function(d,i){d.addEventListener('click',function(){go(i);});});
   var startX=0,dragging=false,moved=0,pts={};
   function ptCount(){return Object.keys(pts).length;}
+  /* When the user pinch-zooms in, hand horizontal panning back to the browser:
+     switch touch-action to auto and stop intercepting drags, so panning while
+     zoomed works normally instead of the carousel hijacking the gesture. */
+  var vv=window.visualViewport;
+  function zoomed(){return !!(vv&&vv.scale>1.05);}
+  function syncZoom(){view.style.touchAction=zoomed()?'auto':'pan-y pinch-zoom';}
+  if(vv){vv.addEventListener('resize',syncZoom);vv.addEventListener('scroll',syncZoom);syncZoom();}
   view.addEventListener('pointerdown',function(e){
+    if(zoomed())return; /* zoomed in: let the page pan, don't swipe */
     pts[e.pointerId]=1;
     if(ptCount()>1){dragging=false;settle();return;} /* 2nd finger = pinch-zoom: never swipe */
     dragging=true;startX=e.clientX;moved=0;track.style.transition='none';try{view.setPointerCapture(e.pointerId);}catch(_){}
@@ -1230,6 +1248,7 @@ footer{background:#12181d;color:#cbd3da;}
   root.querySelectorAll('.rmw-closewrap').forEach(function(b){b.addEventListener('click',close);});
 })();
 </script>
+
 
 
 </body>

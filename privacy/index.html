@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Privacy Policy — Remira</title>
+    <meta
+      name="description"
+      content="How Remira collects, uses, stores, and protects your data — including glucose readings, CGM connections, and family account information."
+    />
+    <link rel="icon" type="image/png" href="/remira-favicon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Privacy Policy — Remira" />
+    <meta
+      property="og:description"
+      content="How Remira collects, uses, stores, and protects your data."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://remira-ai.com/privacy/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #000000;
+        --card: #0d121d;
+        --border: rgba(255, 255, 255, 0.08);
+        --text: #f2f4f8;
+        --muted: #9aa6bd;
+        --accent: #79d9ec;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      /* Ambient glow */
+      .glow {
+        position: fixed;
+        top: -10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 560px;
+        max-width: 120vw;
+        height: 560px;
+        border-radius: 50%;
+        background: rgba(121, 217, 236, 0.1);
+        filter: blur(120px);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .wrap {
+        position: relative;
+        z-index: 1;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 40px 22px 64px;
+      }
+
+      .masthead { text-align: center; margin-bottom: 8px; }
+      .masthead .logo {
+        width: 64px; height: 64px; border-radius: 16px;
+        display: block; margin: 0 auto 18px;
+      }
+      h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: clamp(28px, 7vw, 38px);
+        line-height: 1.1;
+        margin: 0 0 10px;
+      }
+      .dates { color: var(--muted); font-size: 14px; margin: 0; }
+
+      h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(20px, 4.5vw, 24px);
+        font-weight: 600;
+        line-height: 1.25;
+        margin: 0 0 16px;
+        padding-top: 36px;
+        border-top: 1px solid var(--border);
+      }
+      section { margin-top: 20px; }
+      h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        margin: 28px 0 8px;
+      }
+      p { margin: 0 0 14px; }
+      ul { margin: 0 0 16px; padding-left: 22px; }
+      li { margin-bottom: 7px; }
+      strong { font-weight: 600; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .table-wrap { overflow-x: auto; margin: 0 0 18px; -webkit-overflow-scrolling: touch; }
+      table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 420px; }
+      th, td {
+        text-align: left;
+        padding: 12px 14px;
+        border: 1px solid var(--border);
+        vertical-align: top;
+      }
+      th {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        background: var(--card);
+      }
+
+      .callout {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        border-radius: 12px;
+        padding: 16px 18px;
+        margin: 0 0 18px;
+      }
+      .callout p:last-child { margin-bottom: 0; }
+
+      .foot {
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .foot nav { margin-bottom: 14px; }
+      .foot nav a { margin: 0 9px; }
+      .foot .disclaimer { font-style: italic; margin: 16px 0 0; }
+      .foot a.home { color: var(--muted); }
+      .foot a.home:hover { color: var(--accent); }
+    </style>
+  </head>
+
+  <body>
+    <div class="glow" aria-hidden="true"></div>
+
+    <main class="wrap">
+      <header class="masthead">
+        <img class="logo" src="/remira-favicon.png" alt="Remira" />
+        <h1>Remira Privacy Policy</h1>
+        <p class="dates">
+          <strong>Last Updated:</strong> September 1, 2026 &nbsp;·&nbsp;
+          <strong>Effective Date:</strong> September 1, 2026
+        </p>
+      </header>
+
+      <section>
+        <h2>1. Who we are</h2>
+        <p>
+          Remira LLC (“Remira,” “we,” “us”) is a Delaware limited liability company. We make
+          an iOS app for people managing Type 1 Diabetes and for the family members and
+          caregivers who support them.
+        </p>
+        <p>This policy covers the Remira mobile app and remira-ai.com.</p>
+        <p>
+          Questions, requests, or complaints:
+          <strong><a href="mailto:support@remira-ai.com">support@remira-ai.com</a></strong>
+        </p>
+        <p>For UK and EEA users, Remira LLC is the data controller.</p>
+      </section>
+
+      <section>
+        <h2>2. What we collect</h2>
+
+        <h3>2a. Account information</h3>
+        <ul>
+          <li>Email address (or, if you use Sign in with Apple with Hide My Email, a relay address)</li>
+          <li>Your role — whether you are the person with diabetes or a caregiver</li>
+          <li>Which family you belong to</li>
+        </ul>
+        <p>
+          We do not use passwords. You sign in with Apple or with a one-time code sent to your
+          email.
+        </p>
+        <p>
+          Patients under 16 do not create accounts. Their device is paired to a family using a
+          code from their parent or guardian, and we collect no email address from them.
+        </p>
+
+        <h3>2b. Glucose and CGM data</h3>
+        <p>
+          <strong>From Apple Health</strong>, with your permission: blood glucose readings, and
+          where you enable it, sleep, activity, and nutrition data.
+        </p>
+        <p>
+          <strong>From Dexcom Share</strong>, if you connect it: your recent glucose readings,
+          delivered in near real time. To connect it we ask for your Dexcom account username and
+          password, which we store encrypted so we can keep the connection alive.
+        </p>
+        <p>
+          <strong>From FreeStyle LibreLinkUp</strong>, if you connect it: your recent glucose
+          readings, delivered in near real time. To connect it we ask for your LibreLinkUp email
+          and password. We store your password encrypted, along with the access token and the
+          connection details — your region, account identifier, and the identifier of the sensor
+          connection you selected.
+        </p>
+        <p>See section 6 for more on both.</p>
+        <div class="callout">
+          <p>
+            <strong>These readings are transmitted to and stored on our servers.</strong> We use
+            them to compute forecasts, detect patterns, and send notifications. This is necessary
+            for the app to work — the analysis runs on our servers, not on your phone.
+          </p>
+        </div>
+
+        <h3>2c. Diabetes management settings</h3>
+        <p>
+          Insulin sensitivity, carb ratio, target ranges, high and low thresholds, and similar
+          values you enter during setup. Your care team sets these; we use them to interpret your
+          data.
+        </p>
+
+        <h3>2d. Device and technical information</h3>
+        <ul>
+          <li>A device identifier we generate (not Apple’s advertising identifier)</li>
+          <li>Push notification tokens, so we can send alerts</li>
+          <li>App version, iOS version, device model</li>
+          <li>Time zone</li>
+          <li>Crash reports and performance diagnostics</li>
+        </ul>
+
+        <h3>2e. Usage analytics</h3>
+        <p>
+          Which screens you open, which features you use, how often you open the app. We use
+          Amplitude for this.
+        </p>
+        <p>
+          <strong>
+            We never send glucose values, forecasts, or any health measurement to our analytics
+            provider.
+          </strong>
+          Event names and counts only.
+        </p>
+
+        <h3>2f. What stays on your device and never reaches us</h3>
+        <ul>
+          <li>Your journal and reflections</li>
+          <li>Free-text notes</li>
+          <li>Event labels and tags</li>
+          <li>Day-type descriptions</li>
+          <li>Streaks, points, and badges</li>
+        </ul>
+        <p>
+          This information is stored in the app on your phone. We do not receive it, we cannot see
+          it, and it is not visible to caregivers. If you delete the app, it is gone.
+        </p>
+
+        <h3>2g. What we do not collect</h3>
+        <ul>
+          <li>We do not access your contacts, camera, microphone, or precise location.</li>
+          <li>
+            We do not use tracking technologies for advertising, and we do not collect Apple’s
+            advertising identifier.
+          </li>
+          <li>We do not receive your card number. Payments are processed by Stripe.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Where your data lives</h2>
+        <p>
+          Remira runs on infrastructure operated by third parties who process data on our behalf
+          under contract:
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Provider</th><th scope="col">What they hold</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cloudflare</td>
+                <td>Glucose readings, forecasts, encrypted CGM service credentials, account and family records</td>
+              </tr>
+              <tr><td>Supabase</td><td>Email address and sign-in identity</td></tr>
+              <tr><td>Amplitude</td><td>Usage events. No health data</td></tr>
+              <tr><td>Resend</td><td>Delivery of sign-in and account emails</td></tr>
+              <tr><td>Apple</td><td>Push notification delivery</td></tr>
+              <tr><td>Stripe</td><td>Payment processing and card data</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          These providers may process data outside your country, including in the United States.
+          See section 12.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. How we use your data</h2>
+        <p>
+          <strong>To run the app.</strong> Generate forecasts, detect patterns, compute
+          time-in-range and estimated A1C, send notifications, and show your data to the caregivers
+          you have approved.
+        </p>
+        <p>
+          <strong>To improve Remira.</strong> We use glucose data across our users to build and
+          improve the models that produce forecasts and pattern detection. A model trained on more
+          people produces better forecasts for everyone. Where we do this, we work with data that
+          has been stripped of your name, email, and account identifiers.
+        </p>
+        <p>
+          <strong>To support you.</strong> A small number of authorized Remira personnel may access
+          account and glucose data to answer support requests and diagnose problems. Access is
+          limited to what the task requires.
+        </p>
+        <p>
+          <strong>To keep the service safe.</strong> Detect abuse, prevent fraud, and enforce our
+          Terms.
+        </p>
+        <p>
+          <strong>To meet legal obligations.</strong> Respond to lawful requests and comply with
+          applicable law.
+        </p>
+
+        <h3>What we do not do</h3>
+        <ul>
+          <li>We do not sell your data.</li>
+          <li>We do not use your health data for advertising or marketing, to you or to anyone else.</li>
+          <li>We do not share your data with data brokers.</li>
+          <li>
+            We do not use Apple Health data for anything other than providing and improving
+            Remira’s health features, consistent with Apple’s HealthKit requirements.
+          </li>
+        </ul>
+        <p>
+          If we ever want to share data with a research partner or receive value in exchange for
+          data, <strong>we will ask you first and you will have to say yes.</strong> Not a settings
+          default. Not continued use of the app. An explicit choice, which you can withdraw.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Family accounts and what caregivers see</h2>
+        <p>
+          Remira lets one person with diabetes share their data with family members and caregivers.
+        </p>
+        <p><strong>A caregiver can see:</strong></p>
+        <ul>
+          <li>Current and recent glucose readings</li>
+          <li>Forecasts and predicted patterns</li>
+          <li>Time in range, average glucose, estimated A1C</li>
+          <li>Alerts and notifications</li>
+          <li>Whether the patient’s device has recently checked in</li>
+        </ul>
+        <p><strong>A caregiver cannot see:</strong></p>
+        <ul>
+          <li>Journal entries, reflections, or notes</li>
+          <li>Event labels or tags</li>
+          <li>Anything the patient types</li>
+        </ul>
+        <p>
+          The rule we follow:
+          <strong>
+            a caregiver sees information calculated from glucose numbers and time. They never see
+            anything the patient wrote or tapped.
+          </strong>
+          This is enforced on our servers, not just hidden in the app.
+        </p>
+        <p>
+          Every member of a family can see who else is in it. Caregivers can be removed at any time
+          by the account owner, and removal takes effect immediately.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Your CGM connection</h2>
+        <p>
+          Connecting a live CGM service is optional. Remira works using Apple Health alone.
+          Connecting one adds near-real-time readings, live notifications, and the lock screen and
+          widget displays.
+        </p>
+
+        <h3>Dexcom Share</h3>
+        <p>
+          We store your Dexcom username and password encrypted, and use them to sign in on your
+          behalf and retrieve your readings. We store them because the session must be
+          re-established periodically.
+        </p>
+
+        <h3>FreeStyle LibreLinkUp</h3>
+        <p>
+          We use your LibreLinkUp email and password to sign in and obtain an access token.
+          <strong>We store your password encrypted</strong>, along with the token and the details
+          of the sensor connection you chose. We keep the password because the token expires and
+          the session has to be re-established periodically without asking you to sign in again.
+        </p>
+        <p>
+          LibreLinkUp works on a follower model: the person wearing the sensor shares their
+          readings with a LibreLinkUp account. If you are connecting as a follower, the person
+          wearing the sensor should know and agree that you are doing so, and that their readings
+          will be sent to Remira.
+        </p>
+
+        <h3>Both services</h3>
+        <ul>
+          <li>
+            <strong>We store the password you give us, encrypted at rest</strong>, because both
+            services require us to re-authenticate periodically to keep your readings flowing. We
+            never display it, never share it, and delete it when you disconnect or delete your
+            account.
+          </li>
+          <li>
+            <strong>
+              Remira is not affiliated with, endorsed by, or partnered with Dexcom or Abbott.
+            </strong>
+            We use the sharing services those companies make available to followers.
+          </li>
+          <li>
+            Either company may change or discontinue these services at any time, which would stop
+            the feature working. Your data in Apple Health is unaffected.
+          </li>
+          <li>
+            Your use of Dexcom or FreeStyle Libre is governed by that company’s own terms and
+            privacy policy.
+          </li>
+          <li>
+            You can disconnect at any time in Remira’s settings, which deletes the stored
+            credentials and tokens.
+          </li>
+        </ul>
+        <p>
+          Where the service supports it, we recommend using a dedicated follower account rather
+          than your primary login.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Children’s privacy</h2>
+        <p>
+          Remira is not directed to children under 13, and children under 16 cannot create their
+          own Remira account.
+        </p>
+
+        <h3>How under-16 patients use Remira</h3>
+        <p>
+          A parent or legal guardian creates the account, agrees to these terms, and generates a
+          pairing code. The child enters that code on their device.
+          <strong>
+            We do not collect an email address, name, or contact information from the child.
+          </strong>
+          We collect their glucose readings and device information in order to provide the service
+          the parent signed up for.
+        </p>
+
+        <h3>Parental consent</h3>
+        <p>
+          By creating an account and inviting a child under 13, the parent or guardian provides
+          consent for Remira to collect and use that child’s information as described in this
+          policy. Where required, we verify parental identity through the payment method used for
+          the subscription.
+        </p>
+
+        <h3>Rights of parents and guardians</h3>
+        <p>You may at any time:</p>
+        <ul>
+          <li>Review the personal information we hold about your child</li>
+          <li>Ask us to delete it</li>
+          <li>Refuse to permit further collection, by removing the child’s device from the family</li>
+        </ul>
+        <p>
+          Contact <strong><a href="mailto:support@remira-ai.com">support@remira-ai.com</a></strong>.
+          We will verify your identity before acting.
+        </p>
+
+        <h3>What we never do with children’s data</h3>
+        <ul>
+          <li>No behavioral advertising, ever</li>
+          <li>No sale or sharing for advertising or marketing</li>
+          <li>No collection beyond what the service requires</li>
+          <li>No retention longer than necessary</li>
+        </ul>
+
+        <h3>Outside the United States</h3>
+        <p>
+          In the UK, children aged 13 and over may consent to processing of their own data. In the
+          EEA, the age is between 13 and 16 depending on the country. Because Remira requires
+          account holders to be 16 or older, a parent or guardian must set up and manage any
+          account for a person below these ages.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. When we share data</h2>
+        <p>We do not sell your personal information. We share it only:</p>
+        <p>
+          <strong>With service providers</strong> listed in section 3, under contract, and only as
+          needed to run Remira.
+        </p>
+        <p>
+          <strong>With people you choose.</strong> Caregivers you invite, subject to the limits in
+          section 5.
+        </p>
+        <p>
+          <strong>When the law requires it.</strong> In response to a valid subpoena, court order,
+          or lawful government request. We will notify you unless prohibited.
+        </p>
+        <p>
+          <strong>To protect people.</strong> If we believe disclosure is necessary to prevent
+          imminent physical harm.
+        </p>
+        <p>
+          <strong>In a business transfer.</strong> If Remira is acquired or merged, data may
+          transfer as part of the transaction. We will notify you beforehand and you may delete
+          your account first.
+        </p>
+        <p><strong>With your explicit consent</strong>, for anything else.</p>
+      </section>
+
+      <section>
+        <h2>9. How long we keep data, and how to delete it</h2>
+
+        <h3>While your account is active</h3>
+        <p>We keep your data as long as your account exists.</p>
+
+        <h3>When you delete your account</h3>
+        <p>
+          Delete your account in the app, or email
+          <strong><a href="mailto:support@remira-ai.com">support@remira-ai.com</a></strong>. We will:
+        </p>
+        <ul>
+          <li>Delete your email address, sign-in identity, and account records</li>
+          <li>Delete your encrypted CGM service passwords and tokens</li>
+          <li>Delete your push tokens and device records</li>
+          <li>Delete your family and caregiver relationships</li>
+        </ul>
+        <p>This happens within 30 days.</p>
+        <p>
+          <strong>Glucose readings are handled differently.</strong> By default we retain them with
+          all identifying information removed, and use them to improve Remira’s models. They are no
+          longer linked to you, your email, or your account.
+        </p>
+        <p>
+          If you want your glucose history erased as well, say so and we will erase it. Email
+          <strong><a href="mailto:support@remira-ai.com">support@remira-ai.com</a></strong> and ask
+          for full erasure.
+        </p>
+        <p>
+          <strong>If you are in the UK or EEA, we perform full erasure by default</strong>,
+          including glucose history, unless you tell us otherwise.
+        </p>
+
+        <h3>Data on your device</h3>
+        <p>
+          Your journal, reflections, and labels live only on your phone. Deleting the app deletes
+          them. We cannot delete them for you, because we never had them.
+        </p>
+
+        <h3>Legal holds</h3>
+        <p>
+          We may retain limited records where law requires, or where we need them to resolve a
+          dispute or enforce our agreements.
+        </p>
+      </section>
+
+      <section>
+        <h2>10. Your rights</h2>
+
+        <h3>Everyone</h3>
+        <ul>
+          <li><strong>Access</strong> — request a copy of what we hold about you</li>
+          <li><strong>Correct</strong> — fix inaccurate information</li>
+          <li><strong>Delete</strong> — as described in section 9</li>
+          <li>
+            <strong>Withdraw permissions</strong> — revoke Apple Health access in iOS Settings,
+            disconnect your CGM service in the app, turn off notifications at any time
+          </li>
+        </ul>
+        <p>
+          Email <strong><a href="mailto:support@remira-ai.com">support@remira-ai.com</a></strong>.
+          We respond within 30 days.
+        </p>
+
+        <h3>UK and EEA (UK GDPR / GDPR)</h3>
+        <p>
+          Health data is special category data. Our lawful basis for processing it is
+          <strong>your explicit consent</strong>, which you give when you connect Apple Health,
+          Dexcom Share, or LibreLinkUp, and which you can withdraw at any time by disconnecting or
+          deleting your account. For account records and security we rely on contractual necessity
+          and legitimate interests.
+        </p>
+        <p>
+          You additionally have the right to data portability, to restrict processing, to object to
+          processing based on legitimate interests, and to lodge a complaint with your supervisory
+          authority — the ICO in the UK, or your national authority in the EEA.
+        </p>
+
+        <h3>California (CCPA/CPRA)</h3>
+        <p>
+          You have the right to know what we collect and why, to delete, to correct, to opt out of
+          sale or sharing, and to limit use of sensitive personal information.
+          <strong>
+            We do not sell or share personal information as those terms are defined under
+            California law
+          </strong>, and we do not use sensitive personal information for purposes requiring a
+          right to limit.
+        </p>
+        <p>We will not discriminate against you for exercising these rights.</p>
+
+        <h3>Washington, Nevada, and other state health privacy laws</h3>
+        <p>
+          If you are a Washington resident, the My Health My Data Act gives you rights over your
+          consumer health data, including the right to withdraw consent and to have it deleted. We
+          do not sell consumer health data. If that ever changes, we will obtain your separate
+          written authorization first, as the law requires.
+        </p>
+      </section>
+
+      <section>
+        <h2>11. Security and breach notification</h2>
+        <p>
+          We protect your data with encryption in transit and at rest, encrypted storage of CGM
+          service credentials, authenticated access to every server endpoint, and access controls
+          limiting which personnel can view user data.
+        </p>
+        <p>
+          No system is completely secure. If we discover a breach affecting your identifiable
+          health information, we will notify you and the Federal Trade Commission as required by
+          the FTC Health Breach Notification Rule, and any other authority required by applicable
+          law.
+        </p>
+        <p>
+          If you believe your account has been accessed without your permission, email
+          <strong><a href="mailto:support@remira-ai.com">support@remira-ai.com</a></strong>
+          immediately.
+        </p>
+      </section>
+
+      <section>
+        <h2>12. International transfers</h2>
+        <p>
+          Remira is based in the United States and our infrastructure processes data in the United
+          States and other countries. If you use Remira from outside the US, your data will be
+          transferred to the US, where privacy laws differ from your own.
+        </p>
+        <p>
+          Where required, we rely on Standard Contractual Clauses or other approved transfer
+          mechanisms.
+        </p>
+      </section>
+
+      <section>
+        <h2>13. Changes to this policy</h2>
+        <p>
+          We will update the date at the top and, for material changes, notify you in the app or by
+          email before they take effect. If a change would allow a materially different use of your
+          health data, we will ask for your consent rather than assume it.
+        </p>
+      </section>
+
+      <section>
+        <h2>14. Contact</h2>
+        <p>
+          <strong>Remira LLC</strong>
+          <a href="mailto:support@remira-ai.com">support@remira-ai.com</a>
+        </p>
+        <p>
+          We aim to answer within 5 business days, and formal data rights requests within 30 days.
+        </p>
+      </section>
+
+      <footer class="foot">
+        <nav>
+          <a href="/terms/">Terms of Service</a>·<a href="/support/">Support</a>
+        </nav>
+        <a class="home" href="/">← Back to remira-ai.com</a>
+        <p class="disclaimer">
+          Remira is a wellness and information tool, not a medical device. It does not diagnose,
+          treat, or prevent disease, and it does not replace your care team.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

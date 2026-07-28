@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Support — Remira</title>
+    <meta
+      name="description"
+      content="Get help with Remira. Answers on signing in, CGM connections, family accounts, alerts, data, and billing — plus how to reach a human."
+    />
+    <link rel="icon" type="image/png" href="/remira-favicon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Support — Remira" />
+    <meta property="og:description" content="Get help with Remira. We read every message." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://remira-ai.com/support/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #000000;
+        --card: #0d121d;
+        --border: rgba(255, 255, 255, 0.08);
+        --text: #f2f4f8;
+        --muted: #9aa6bd;
+        --accent: #79d9ec;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      /* Ambient glow */
+      .glow {
+        position: fixed;
+        top: -10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 560px;
+        max-width: 120vw;
+        height: 560px;
+        border-radius: 50%;
+        background: rgba(121, 217, 236, 0.1);
+        filter: blur(120px);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .wrap {
+        position: relative;
+        z-index: 1;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 40px 22px 64px;
+      }
+
+      .masthead { text-align: center; margin-bottom: 28px; }
+      .masthead .logo {
+        width: 64px; height: 64px; border-radius: 16px;
+        display: block; margin: 0 auto 18px;
+      }
+      h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: clamp(28px, 7vw, 38px);
+        line-height: 1.1;
+        margin: 0 0 14px;
+      }
+
+      /* Contact card — the thing App Store reviewers and users are looking for */
+      .contact {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 24px 22px;
+        text-align: center;
+        margin-bottom: 12px;
+      }
+      .contact .email {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(18px, 4.5vw, 22px);
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 12px;
+        word-break: break-word;
+      }
+      .contact p { margin: 0 0 10px; }
+      .contact p:last-child { margin-bottom: 0; }
+
+      h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(20px, 4.5vw, 24px);
+        font-weight: 600;
+        line-height: 1.25;
+        margin: 0 0 16px;
+        padding-top: 36px;
+        border-top: 1px solid var(--border);
+      }
+      section { margin-top: 20px; }
+      h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        margin: 30px 0 10px;
+        color: var(--accent);
+        letter-spacing: 0.02em;
+      }
+      p { margin: 0 0 14px; }
+      ul { margin: 0 0 16px; padding-left: 22px; }
+      li { margin-bottom: 7px; }
+      strong { font-weight: 600; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.92em;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 1px 6px;
+        word-break: break-word;
+      }
+
+      /* Q&A pairs */
+      .qa { margin: 0 0 16px; }
+      .qa dt {
+        font-weight: 600;
+        margin-bottom: 3px;
+      }
+      .qa dd {
+        margin: 0 0 16px;
+        color: var(--muted);
+      }
+      .qa dd:last-child { margin-bottom: 0; }
+
+      .callout {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        border-radius: 12px;
+        padding: 16px 18px;
+        margin: 18px 0;
+      }
+      .callout p:last-child { margin-bottom: 0; }
+
+      .foot {
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .foot nav { margin-bottom: 14px; }
+      .foot nav a { margin: 0 9px; }
+      .foot .disclaimer { font-style: italic; margin: 16px 0 0; }
+      .foot a.home { color: var(--muted); }
+      .foot a.home:hover { color: var(--accent); }
+    </style>
+  </head>
+
+  <body>
+    <div class="glow" aria-hidden="true"></div>
+
+    <main class="wrap">
+      <header class="masthead">
+        <img class="logo" src="/remira-favicon.png" alt="Remira" />
+        <h1>Remira Support</h1>
+      </header>
+
+      <div class="contact">
+        <a class="email" href="mailto:support@remira-ai.com">support@remira-ai.com</a>
+        <p>
+          We read every message. Most get a reply within one business day, and we aim to answer
+          everything within five.
+        </p>
+        <p>
+          When you write in, it helps to include the email on your account, your iPhone model and
+          iOS version, and roughly when the problem happened.
+        </p>
+      </div>
+
+      <section>
+        <h2>Common questions</h2>
+
+        <h3>Getting started</h3>
+        <dl class="qa">
+          <dt>How do I sign in?</dt>
+          <dd>
+            Tap Sign in with Apple, or enter your email and we will send you a six-digit code.
+            Remira does not use passwords.
+          </dd>
+
+          <dt>I didn’t get my code.</dt>
+          <dd>
+            Check spam. Codes come from <code>noreply@mail.remira-ai.com</code> and expire after an
+            hour. You can request another after a minute. Still nothing, email us.
+          </dd>
+
+          <dt>What do I need to use Remira?</dt>
+          <dd>
+            An iPhone and a CGM. Remira reads from Apple Health, and you can also connect Dexcom
+            Share or FreeStyle LibreLinkUp for near-real-time readings, live alerts, and the lock
+            screen display.
+          </dd>
+
+          <dt>Which CGMs work?</dt>
+          <dd>
+            Dexcom and FreeStyle Libre. Dexcom G6 and G7 write to Apple Health directly, and Dexcom
+            Share adds the live layer. FreeStyle Libre connects through LibreLinkUp.
+          </dd>
+
+          <dt>How do I connect LibreLinkUp?</dt>
+          <dd>
+            Settings → CGM → FreeStyle Libre, then sign in with your LibreLinkUp email and password
+            and pick the sensor connection you want to follow. If you are following someone else’s
+            sensor, make sure they know you are connecting it to Remira.
+          </dd>
+
+          <dt>Why does Remira need history?</dt>
+          <dd>
+            Patterns need data. Expect about two weeks before forecasts become reliable, and longer
+            for the more specific patterns.
+          </dd>
+        </dl>
+
+        <h3>Family and caregivers</h3>
+        <dl class="qa">
+          <dt>How do I add a family member?</dt>
+          <dd>
+            Settings → Family → Create Invite. Send them the code. Codes work once and expire after
+            72 hours.
+          </dd>
+
+          <dt>How do I set up my child’s phone?</dt>
+          <dd>
+            Create the account on your own device first, then generate an invite for their phone
+            and enter the code there. Young people under 16 do not create their own accounts.
+          </dd>
+
+          <dt>What can a caregiver see?</dt>
+          <dd>
+            Glucose readings, forecasts, patterns, time in range, alerts, and check-ins. Not
+            journal entries, notes, or labels — anything the person with diabetes writes stays with
+            them.
+          </dd>
+
+          <dt>How do I remove someone?</dt>
+          <dd>Settings → Family → tap the member → Remove. It takes effect immediately.</dd>
+
+          <dt>Can two people with diabetes share one account?</dt>
+          <dd>Not yet. Each person needs their own account.</dd>
+        </dl>
+
+        <h3>Alerts</h3>
+        <dl class="qa">
+          <dt>I’m not getting notifications.</dt>
+          <dd>
+            Check Settings → Notifications → Remira is allowed. Check that Focus or Do Not Disturb
+            isn’t blocking them. Check Low Power Mode. Then open Remira once — that refreshes the
+            connection.
+          </dd>
+
+          <dt>Alerts are late.</dt>
+          <dd>
+            Remira depends on your CGM, your network, and Apple’s push service. Delays happen.
+          </dd>
+        </dl>
+        <div class="callout">
+          <p>
+            <strong>Important:</strong> Remira’s alerts are supplementary and can fail. Keep your
+            CGM’s own alarms turned on. Never rely on Remira as your safety net, and never take
+            silence as a sign everything is fine.
+          </p>
+        </div>
+
+        <h3>Data</h3>
+        <dl class="qa">
+          <dt>Where is my glucose data stored?</dt>
+          <dd>
+            On our servers, so we can generate forecasts and send alerts. Your journal, notes, and
+            labels stay on your phone and never reach us.
+          </dd>
+
+          <dt>How do I export my data?</dt>
+          <dd>Email us and we will send it to you.</dd>
+
+          <dt>How do I delete my account?</dt>
+          <dd>
+            Settings → Account → Delete Account, or email us. We remove your account, email, CGM
+            credentials, and devices within 30 days. Glucose readings are kept with identifying
+            information stripped out — if you want those erased too, just ask.
+          </dd>
+
+          <dt>How do I disconnect my CGM service?</dt>
+          <dd>
+            Settings → CGM → Disconnect. Your stored password and tokens are deleted. Apple Health
+            data is unaffected.
+          </dd>
+
+          <dt>Do you store my Dexcom or LibreLinkUp password?</dt>
+          <dd>
+            Yes, encrypted. Both services expire their sessions, so we need to sign in again
+            periodically to keep your readings flowing. We never display it or share it, and it is
+            deleted the moment you disconnect. Where the service allows it, use a dedicated
+            follower account rather than your main login.
+          </dd>
+        </dl>
+
+        <h3>Billing</h3>
+        <dl class="qa">
+          <dt>What does it cost?</dt>
+          <dd>21 days free, then $5 per month. One subscription covers everyone in the family.</dd>
+
+          <dt>Where do I manage it?</dt>
+          <dd>
+            On remira-ai.com, signed in with your Remira account. Subscriptions are not purchased
+            through the App Store.
+          </dd>
+
+          <dt>How do I cancel?</dt>
+          <dd>
+            Account page on remira-ai.com → Cancel. Access continues to the end of the billing
+            period. Cancel during the trial and you are never charged. No phone call, no chat, no
+            retention gauntlet.
+          </dd>
+
+          <dt>Can I get a refund?</dt>
+          <dd>We do not refund partial months as a rule, but if something went wrong, tell us.</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Something’s broken</h2>
+        <p>If Remira is not showing data, try in this order:</p>
+        <ul>
+          <li>Open the app and wait a moment</li>
+          <li>Check that your CGM app is receiving readings</li>
+          <li>Check Apple Health has recent glucose data (Health → Browse → Blood Glucose)</li>
+          <li>If you use Dexcom Share, check that connection in settings</li>
+        </ul>
+        <p>Still stuck, email us with what you tried.</p>
+      </section>
+
+      <section>
+        <h2>Privacy and safety</h2>
+        <p>
+          Something urgent about your account or data security — put <strong>URGENT</strong> in the
+          subject line.
+        </p>
+        <p>
+          To report a vulnerability, email us with details and give us a reasonable window to fix
+          it before disclosing publicly. We will credit you if you want.
+        </p>
+        <p>
+          Parents and guardians can review or delete a child’s data at any time by writing in. We
+          will verify identity first.
+        </p>
+      </section>
+
+      <section>
+        <h2>Feedback</h2>
+        <p>
+          Remira is built by two people and shaped mostly by what users tell us. If something is
+          confusing, broken, or missing, we want to hear it.
+        </p>
+        <p>
+          <a href="mailto:support@remira-ai.com">support@remira-ai.com</a>
+        </p>
+      </section>
+
+      <footer class="foot">
+        <nav>
+          <a href="/privacy/">Privacy Policy</a>·<a href="/terms/">Terms of Service</a>
+        </nav>
+        <p>Remira LLC · <a href="mailto:support@remira-ai.com">support@remira-ai.com</a></p>
+        <a class="home" href="/">← Back to remira-ai.com</a>
+        <p class="disclaimer">
+          Remira is a wellness and information tool, not a medical device. It does not diagnose,
+          treat, or prevent disease. Work with your care team.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

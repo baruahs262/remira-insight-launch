@@ -56,6 +56,35 @@ const Footer = () => {
           </a>
         </motion.div>
 
+        {/* Standalone static pages under public/ — plain anchors with a trailing
+            slash, not react-router links. */}
+        <motion.nav
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15, duration: 0.5 }}
+          className="flex items-center gap-6 text-sm"
+        >
+          <a
+            href="/privacy/"
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            Privacy
+          </a>
+          <a
+            href="/terms/"
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            Terms
+          </a>
+          <a
+            href="/support/"
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            Support
+          </a>
+        </motion.nav>
+
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

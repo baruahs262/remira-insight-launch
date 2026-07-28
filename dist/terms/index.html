@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Terms of Service — Remira</title>
+    <meta
+      name="description"
+      content="The terms that govern your use of Remira, including eligibility, family accounts, CGM connections, subscriptions, and dispute resolution."
+    />
+    <link rel="icon" type="image/png" href="/remira-favicon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Terms of Service — Remira" />
+    <meta property="og:description" content="The terms that govern your use of Remira." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://remira-ai.com/terms/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #000000;
+        --card: #0d121d;
+        --border: rgba(255, 255, 255, 0.08);
+        --text: #f2f4f8;
+        --muted: #9aa6bd;
+        --accent: #79d9ec;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      /* Ambient glow */
+      .glow {
+        position: fixed;
+        top: -10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 560px;
+        max-width: 120vw;
+        height: 560px;
+        border-radius: 50%;
+        background: rgba(121, 217, 236, 0.1);
+        filter: blur(120px);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .wrap {
+        position: relative;
+        z-index: 1;
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 40px 22px 64px;
+      }
+
+      .masthead { text-align: center; margin-bottom: 8px; }
+      .masthead .logo {
+        width: 64px; height: 64px; border-radius: 16px;
+        display: block; margin: 0 auto 18px;
+      }
+      h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: clamp(28px, 7vw, 38px);
+        line-height: 1.1;
+        margin: 0 0 10px;
+      }
+      .dates { color: var(--muted); font-size: 14px; margin: 0; }
+
+      h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(20px, 4.5vw, 24px);
+        font-weight: 600;
+        line-height: 1.25;
+        margin: 0 0 16px;
+        padding-top: 36px;
+        border-top: 1px solid var(--border);
+      }
+      section { margin-top: 20px; }
+      h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        margin: 28px 0 8px;
+      }
+      p { margin: 0 0 14px; }
+      ul { margin: 0 0 16px; padding-left: 22px; }
+      li { margin-bottom: 7px; }
+      strong { font-weight: 600; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .callout {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--accent);
+        border-radius: 12px;
+        padding: 16px 18px;
+        margin: 0 0 18px;
+      }
+      .callout p:last-child { margin-bottom: 0; }
+
+      /* All-caps legal blocks — smaller and dimmer so they stay readable */
+      .legalese {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .foot {
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .foot nav { margin-bottom: 14px; }
+      .foot nav a { margin: 0 9px; }
+      .foot .disclaimer { font-style: italic; margin: 16px 0 0; }
+      .foot a.home { color: var(--muted); }
+      .foot a.home:hover { color: var(--accent); }
+    </style>
+  </head>
+
+  <body>
+    <div class="glow" aria-hidden="true"></div>
+
+    <main class="wrap">
+      <header class="masthead">
+        <img class="logo" src="/remira-favicon.png" alt="Remira" />
+        <h1>Remira Terms of Service</h1>
+        <p class="dates">
+          <strong>Last Updated:</strong> September 1, 2026 &nbsp;·&nbsp;
+          <strong>Effective Date:</strong> September 1, 2026
+        </p>
+      </header>
+
+      <section>
+        <h2>1. Agreement</h2>
+        <p>
+          By downloading, installing, or using Remira, you agree to these Terms. If you do not
+          agree, do not use the app.
+        </p>
+        <p>
+          Remira is operated by <strong>Remira LLC</strong>, a Delaware limited liability company.
+        </p>
+        <p>
+          These Terms are a legally binding agreement. Section 15 contains an
+          <strong>arbitration clause and class action waiver</strong> that affects how disputes
+          between us are resolved. Please read it.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Who can use Remira</h2>
+        <p><strong>You must be 16 or older to create a Remira account.</strong></p>
+        <p>
+          <strong>People with diabetes under 16</strong> may use Remira only through a family
+          account created by a parent or legal guardian. The parent or guardian creates the
+          account, agrees to these Terms on the young person’s behalf, generates a pairing code,
+          and remains responsible for that use.
+        </p>
+        <p>
+          <strong>Children under 13.</strong> We do not knowingly collect personal information from
+          children under 13 except through a parent or guardian who has created the account, agreed
+          to these Terms, and consented to the collection described in our
+          <a href="/privacy/">Privacy Policy</a>. Parents may review or delete their child’s
+          information, or stop further collection, at any time by contacting
+          <a href="mailto:support@remira-ai.com">support@remira-ai.com</a>.
+        </p>
+        <p>
+          <strong>Outside the United States.</strong> If your country sets a higher minimum age for
+          consenting to data processing, that age applies.
+        </p>
+        <p>By using Remira you confirm you meet these requirements.</p>
+      </section>
+
+      <section>
+        <h2>3. What Remira is, and what it is not</h2>
+
+        <h3>What it is</h3>
+        <p>Remira is a personal wellness and information tool. It:</p>
+        <ul>
+          <li>Reads glucose data from Apple Health and, optionally, from Dexcom Share or FreeStyle LibreLinkUp</li>
+          <li>Identifies patterns in that data</li>
+          <li>Produces forecasts of likely near-term glucose movement</li>
+          <li>Sends notifications about current and predicted readings</li>
+          <li>Lets you share this information with family members and caregivers you choose</li>
+        </ul>
+
+        <h3>What it is not</h3>
+        <p><strong>Remira is not a medical device. It is not FDA-cleared or FDA-approved.</strong></p>
+        <ul>
+          <li>Remira does not diagnose, treat, cure, or prevent any disease</li>
+          <li>Remira does not provide medical advice, clinical assessment, or treatment recommendations</li>
+          <li>Remira does not tell you how much insulin to take, what to eat, or how to change your management</li>
+          <li>Remira does not replace your endocrinologist, physician, diabetes educator, or any member of your care team</li>
+        </ul>
+        <p>Remira describes what your data shows. It does not tell you what to do about it.</p>
+        <div class="callout">
+          <p>
+            <strong>
+              Always consult a qualified healthcare professional before changing your insulin
+              dosing, diet, medication, or diabetes management. Never make a treatment decision
+              based only on Remira.
+            </strong>
+          </p>
+        </div>
+
+        <h3>Alerts are not an alarm system</h3>
+        <p>This is important.</p>
+        <div class="callout">
+          <p>
+            <strong>
+              Remira’s notifications are supplementary. They are not a substitute for the alarms
+              built into your CGM, and you must not rely on them for safety.
+            </strong>
+          </p>
+        </div>
+        <p>
+          Remira alerts can be delayed, degraded, or fail entirely — because of phone settings, Do
+          Not Disturb, network problems, an expired or interrupted Dexcom connection, notification
+          permissions, battery optimization, a service outage on our side or a third party’s, or a
+          bug.
+        </p>
+        <p>
+          Keep your CGM’s own alarms enabled and configured with your care team. Treat anything
+          Remira sends as an extra prompt, never as the thing standing between you and a dangerous
+          low.
+        </p>
+        <p>
+          The same applies to caregivers.
+          <strong>A caregiver must never assume that no alert means everything is fine.</strong>
+          Absence of a notification is not evidence of safety.
+        </p>
+
+        <h3>Forecasts are estimates</h3>
+        <p>
+          Forecasts are statistical estimates from past data. Glucose is affected by many things
+          Remira cannot see. Forecasts will sometimes be wrong, sometimes substantially. They are
+          context, not instruction.
+        </p>
+
+        <h3>You accept these risks</h3>
+        <p>
+          By using Remira you acknowledge that diabetes management carries serious risks including
+          severe hypoglycemia and hyperglycemia; that data may be inaccurate, delayed, incomplete,
+          or unavailable; that acting on Remira’s output without professional guidance could cause
+          harm; and that you remain responsible for your own care decisions.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Accounts</h2>
+        <p>
+          You are responsible for keeping access to your account secure, for activity under your
+          account, and for telling us promptly at
+          <a href="mailto:support@remira-ai.com">support@remira-ai.com</a> if you believe someone
+          else has gained access.
+        </p>
+        <p>
+          Provide accurate information and keep it current. We may suspend or terminate accounts
+          that violate these Terms.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Family accounts and caregiver access</h2>
+        <p>
+          One family account contains one person with diabetes and any number of caregivers.
+        </p>
+        <p>
+          <strong>The account owner controls who has access.</strong> Only the owner can invite or
+          remove members. Invite codes are single-use and expire.
+        </p>
+        <p>
+          <strong>Every member can see who else is in the family.</strong> We do this deliberately,
+          so nobody is watched without knowing it.
+        </p>
+        <p>
+          <strong>Caregivers see glucose information only.</strong> Readings, forecasts, patterns,
+          statistics, alerts, and check-ins. They do not see journal entries, notes, labels, or
+          anything else the patient writes. This is enforced by our servers.
+        </p>
+        <p>
+          <strong>
+            If you invite someone, you are choosing to share your health information with them.
+          </strong>
+          We cannot control what they do with it. Remove access at any time; removal is immediate.
+        </p>
+        <p>
+          If you are a parent creating an account for a young person, you are responsible for that
+          account and for the appropriateness of the access you grant.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Connecting your CGM</h2>
+        <p>
+          <strong>Apple Health.</strong> You may grant Remira permission to read glucose and
+          related data. Revoke it at any time in iOS Settings. Our use of Apple Health data follows
+          Apple’s HealthKit requirements in addition to these Terms.
+        </p>
+        <p>
+          <strong>Dexcom Share.</strong> Optional. If you connect it, you authorize Remira to sign
+          in to Dexcom Share using the credentials you provide and to retrieve your readings on
+          your behalf. We store those credentials encrypted.
+        </p>
+        <p>
+          <strong>FreeStyle LibreLinkUp.</strong> Optional. If you connect it, you authorize Remira
+          to sign in to LibreLinkUp using the credentials you provide, to obtain an access token,
+          and to retrieve readings from the sensor connection you select. We store your password,
+          the token, and the connection details encrypted, and re-authenticate on your behalf when
+          the token expires.
+        </p>
+        <p>
+          <strong>You must be entitled to the data you connect.</strong> LibreLinkUp works on a
+          follower model. If you connect as a follower rather than as the person wearing the
+          sensor, you confirm that the person wearing it knows and agrees that their readings will
+          be shared with Remira. Do not connect an account or a sensor connection you are not
+          authorized to access.
+        </p>
+        <p>
+          <strong>
+            Remira is not affiliated with, endorsed by, or partnered with Dexcom, Abbott, or any
+            CGM manufacturer.
+          </strong>
+          We use the sharing services those companies make available to followers. Either company
+          may change, restrict, or discontinue those services at any time, and if that happens the
+          feature will stop working — through no fault of ours and with no entitlement to a refund
+          beyond what these Terms otherwise provide. Your use of Dexcom or FreeStyle Libre is
+          governed by that company’s own terms.
+        </p>
+        <p>
+          Where the service supports it, we suggest using a dedicated follower account rather than
+          your primary login. Disconnect at any time in settings, which deletes the stored
+          credentials.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Subscriptions, trial, and payment</h2>
+
+        <h3>Free trial</h3>
+        <p>
+          New family accounts receive a <strong>21-day free trial</strong> with full access. One
+          trial per family. We may modify or discontinue trials for new users at any time.
+        </p>
+
+        <h3>Subscription</h3>
+        <p>
+          After the trial, continued access requires a subscription. Current pricing is
+          <strong>$4.99 per month</strong> or <strong>$39.99 per year</strong>, or the price shown
+          to you at the time you subscribe. Prices may change; existing subscribers receive at
+          least 30 days’ notice before a change affects them, and you may cancel before it takes
+          effect.
+        </p>
+        <p>
+          <strong>One subscription covers the whole family.</strong> Every member’s access is
+          included.
+        </p>
+
+        <h3>How billing works</h3>
+        <p>
+          Subscriptions are purchased on <strong>remira-ai.com</strong> and processed by Stripe.
+          They are not purchased through the App Store, and Apple does not process, service, or
+          refund them.
+        </p>
+        <p>
+          <strong>
+            Your subscription renews automatically at the end of each billing period until you
+            cancel.
+          </strong>
+          You are charged the then-current price at the start of each period using the payment
+          method on file. If your trial converts, the first charge occurs when the trial ends.
+        </p>
+
+        <h3>Cancelling</h3>
+        <p>
+          Cancel any time from your account page on remira-ai.com. Cancellation takes effect at the
+          end of the current billing period, and you keep access until then. Cancelling during the
+          trial means you are never charged.
+        </p>
+        <p>We will not make you call, email, or chat with anyone to cancel.</p>
+
+        <h3>Refunds</h3>
+        <p>
+          We do not offer refunds for partial periods, except where required by law. If something
+          has gone wrong, email
+          <a href="mailto:support@remira-ai.com">support@remira-ai.com</a> — we would rather sort
+          it out than have you feel cheated.
+        </p>
+
+        <h3>If your subscription lapses</h3>
+        <p>Your data is not deleted. You lose access to Remira’s features until you resubscribe.</p>
+      </section>
+
+      <section>
+        <h2>8. Acceptable use</h2>
+        <p>Do not:</p>
+        <ul>
+          <li>Use Remira unlawfully, or to harm, harass, stalk, or monitor someone without their knowledge and permission</li>
+          <li>Reverse engineer, decompile, or extract source code</li>
+          <li>Attempt to access another person’s account or data</li>
+          <li>Interfere with or disrupt our infrastructure, or attempt to circumvent authentication or rate limits</li>
+          <li>Use automated tools, bots, or scrapers</li>
+          <li>Create accounts to evade a suspension or obtain additional free trials</li>
+          <li>Resell or commercially redistribute Remira</li>
+        </ul>
+        <p>
+          <strong>On monitoring specifically:</strong> Remira is built for consensual care within a
+          family. Using it to track an adult without their knowledge violates these Terms and may
+          violate the law.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. Intellectual property</h2>
+        <p>
+          Remira — the name, logo, interface, design, algorithms, models, and content — is owned by
+          Remira LLC and protected by intellectual property law.
+        </p>
+        <p>
+          You receive a limited, non-exclusive, non-transferable, revocable license to use Remira
+          for personal, non-commercial purposes under these Terms.
+        </p>
+        <p>
+          <strong>Your data is yours.</strong> You grant us the license we need to operate and
+          improve Remira as described in our <a href="/privacy/">Privacy Policy</a>. We claim no
+          ownership of your health data.
+        </p>
+        <p>
+          If you send us feedback or suggestions, we may use them freely without obligation to you.
+        </p>
+      </section>
+
+      <section>
+        <h2>10. Availability</h2>
+        <p>
+          We do not guarantee Remira will be available, uninterrupted, or error-free. We may
+          modify, suspend, or discontinue any part of it. If we discontinue Remira entirely, we
+          will give reasonable notice and a way to export your data.
+        </p>
+        <p>
+          Remira depends on services we do not control — Apple, Dexcom, Abbott, cellular and
+          internet providers. Their failures, changes, or restrictions may interrupt Remira, and we
+          are not responsible for them.
+        </p>
+      </section>
+
+      <section>
+        <h2>11. Disclaimer of warranties</h2>
+        <div class="legalese">
+          <p>
+            REMIRA IS PROVIDED “AS IS” AND “AS AVAILABLE” WITHOUT WARRANTIES OF ANY KIND, EXPRESS
+            OR IMPLIED.
+          </p>
+          <p>
+            TO THE FULLEST EXTENT PERMITTED BY LAW, REMIRA LLC DISCLAIMS ALL WARRANTIES, INCLUDING
+            MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT; ANY WARRANTY
+            THAT THE APP WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE; AND ANY WARRANTY AS
+            TO THE ACCURACY, COMPLETENESS, RELIABILITY, OR TIMELINESS OF ANY DATA, READING,
+            FORECAST, PATTERN, ALERT, OR NOTIFICATION.
+          </p>
+          <p>
+            GLUCOSE DATA ORIGINATES FROM YOUR CGM AND REACHES US THROUGH APPLE HEALTH, DEXCOM
+            SHARE, OR FREESTYLE LIBRELINKUP. WE DO NOT WARRANT THE ACCURACY, COMPLETENESS,
+            TIMELINESS, OR CONTINUED AVAILABILITY OF ANY OF THOSE SOURCES.
+          </p>
+          <p>
+            WE DO NOT WARRANT THAT NOTIFICATIONS WILL BE DELIVERED, DELIVERED ON TIME, OR DELIVERED
+            AT ALL.
+          </p>
+        </div>
+        <p>
+          Some jurisdictions do not allow these exclusions. Where that is so, they apply to the
+          maximum extent permitted.
+        </p>
+      </section>
+
+      <section>
+        <h2>12. Limitation of liability</h2>
+        <div class="legalese">
+          <p>
+            TO THE FULLEST EXTENT PERMITTED BY LAW, REMIRA LLC AND ITS MEMBERS, OFFICERS,
+            EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
+            CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES; ANY LOSS OF DATA, PROFITS, OR GOODWILL;
+            ANY PERSONAL INJURY OR HEALTH OUTCOME ARISING FROM YOUR USE OF OR RELIANCE ON REMIRA;
+            OR ANY FAILURE, DELAY, OR NON-DELIVERY OF A NOTIFICATION OR ALERT.
+          </p>
+          <p>
+            OUR TOTAL LIABILITY FOR ANY CLAIM SHALL NOT EXCEED THE GREATER OF THE AMOUNT YOU PAID
+            US IN THE TWELVE MONTHS BEFORE THE CLAIM, OR FIFTY US DOLLARS ($50).
+          </p>
+        </div>
+        <p>
+          Some jurisdictions do not allow limiting liability for death, personal injury caused by
+          negligence, fraud, or other liabilities that cannot be limited by law. Nothing here
+          excludes liability that cannot lawfully be excluded, and if you are a consumer in such a
+          jurisdiction, these limits apply only to the extent permitted.
+        </p>
+      </section>
+
+      <section>
+        <h2>13. Indemnification</h2>
+        <p>
+          You agree to indemnify and hold harmless Remira LLC and its members, officers, employees,
+          and agents from any claim, damage, loss, or expense (including reasonable legal fees)
+          arising from your use of Remira, your violation of these Terms or of any law, your
+          violation of anyone’s rights, or any decision you or someone in your family account makes
+          based on Remira.
+        </p>
+      </section>
+
+      <section>
+        <h2>14. Termination</h2>
+        <p>
+          <strong>By you.</strong> Delete your account in the app or email
+          <a href="mailto:support@remira-ai.com">support@remira-ai.com</a>. Cancel your
+          subscription on remira-ai.com.
+        </p>
+        <p>
+          <strong>By us.</strong> We may suspend or terminate your access if you violate these
+          Terms, if we are required to by law, or if continued access creates a legal, safety, or
+          operational risk. Where practical we will give notice and an opportunity to fix the
+          problem.
+        </p>
+        <p>Sections 9, 11, 12, 13, 15, and 16 survive termination.</p>
+      </section>
+
+      <section>
+        <h2>15. Disputes</h2>
+
+        <h3>Informal resolution first</h3>
+        <p>
+          Before starting a formal proceeding, contact us at
+          <a href="mailto:support@remira-ai.com">support@remira-ai.com</a> and give us 30 days to
+          resolve it. Most problems are solvable this way.
+        </p>
+
+        <h3>Binding arbitration</h3>
+        <p>
+          If we cannot resolve it,
+          <strong>
+            you and Remira agree that any dispute will be resolved by binding individual
+            arbitration
+          </strong>
+          administered by the American Arbitration Association under its Consumer Arbitration
+          Rules, in English, in Delaware or by video at your election.
+        </p>
+        <p>
+          <strong>
+            You and Remira waive the right to a jury trial and the right to participate in a class
+            action, collective action, or representative proceeding.
+          </strong>
+          Disputes are resolved individually.
+        </p>
+
+        <h3>Exceptions</h3>
+        <p>
+          Either party may bring a claim in small claims court if it qualifies. Either party may
+          seek injunctive relief in court for intellectual property infringement or unauthorized
+          access to systems or data.
+        </p>
+
+        <h3>Opting out of arbitration</h3>
+        <p>
+          <strong>You may opt out of arbitration within 30 days of first accepting these Terms</strong>
+          by emailing
+          <a href="mailto:support@remira-ai.com?subject=Arbitration%20Opt-Out">support@remira-ai.com</a>
+          with the subject “Arbitration Opt-Out” and your account email. Opting out does not affect
+          anything else in these Terms.
+        </p>
+
+        <h3>If you are outside the US</h3>
+        <p>
+          Mandatory consumer protection law in your country may give you rights that cannot be
+          waived, including the right to bring a claim in your local courts. Nothing here limits
+          those rights, and where local law conflicts with this section, local law prevails.
+        </p>
+      </section>
+
+      <section>
+        <h2>16. General</h2>
+        <p>
+          <strong>Governing law.</strong> These Terms are governed by the laws of the State of
+          Delaware, without regard to conflict of law principles, except where mandatory local
+          consumer law applies.
+        </p>
+        <p>
+          <strong>Changes.</strong> We may update these Terms. We will update the date above and,
+          for material changes, notify you in the app or by email before they take effect.
+          Continued use afterwards means you accept them. If you do not, stop using Remira and
+          cancel.
+        </p>
+        <p>
+          <strong>Severability.</strong> If any provision is unenforceable, the rest remains in
+          effect.
+        </p>
+        <p><strong>No waiver.</strong> Failing to enforce a provision does not waive it.</p>
+        <p>
+          <strong>Assignment.</strong> You may not assign these Terms. We may assign them in
+          connection with a merger, acquisition, or sale of assets.
+        </p>
+        <p>
+          <strong>Entire agreement.</strong> These Terms and the
+          <a href="/privacy/">Privacy Policy</a> are the entire agreement between you and Remira
+          LLC about the app.
+        </p>
+      </section>
+
+      <section>
+        <h2>17. Contact</h2>
+        <p>
+          <strong>Remira LLC</strong>
+          <a href="mailto:support@remira-ai.com">support@remira-ai.com</a>
+        </p>
+      </section>
+
+      <footer class="foot">
+        <nav>
+          <a href="/privacy/">Privacy Policy</a>·<a href="/support/">Support</a>
+        </nav>
+        <a class="home" href="/">← Back to remira-ai.com</a>
+        <p class="disclaimer">
+          Remira is a wellness and information tool, not a medical device. Work with your care team
+          to manage your diabetes.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

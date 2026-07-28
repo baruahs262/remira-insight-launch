@@ -9,7 +9,15 @@ import { componentTagger } from "lovable-tagger";
 // it falls through to the SPA, which renders the React 404. This dev-only
 // middleware rewrites the clean URL to the real file so local testing matches
 // production.
-const STATIC_PAGES = ["waitlist", "external"];
+const STATIC_PAGES = [
+  "waitlist",
+  "external",
+  "premium",
+  "privacy",
+  "terms",
+  "support",
+  "auth/done",
+];
 const serveStaticPages = () => ({
   name: "serve-static-pages",
   configureServer(server) {

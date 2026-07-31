@@ -378,6 +378,15 @@ p{margin:0;} a{color:inherit;text-decoration:none;} img{display:block;max-width:
 .price-line .per{font-size:15px;color:var(--muted);font-weight:600;}
 .pcard.fam{border:1.5px solid rgba(108,92,231,.4);box-shadow:0 30px 60px -30px rgba(108,92,231,.4);}
 .pcard.fam .tier{color:var(--blue-600);}
+.pcard.free{border:1.5px solid var(--mint);background:linear-gradient(120deg,rgba(18,184,132,.10),rgba(255,255,255,.72) 60%);box-shadow:0 26px 56px -30px rgba(18,184,132,.5);}
+.free-grid{display:grid;grid-template-columns:auto 1fr;gap:12px 30px;align-items:center;}
+.free-head .price-line{margin:2px 0 0;}
+.free-head .price-line .amt{color:var(--mint-700);}
+.free-head .price-line .per{color:var(--mint-700);font-weight:700;}
+.free-body p{color:var(--ink-2);font-size:clamp(15px,1.9vw,17.5px);line-height:1.55;margin:0;}
+.free-body b{color:var(--ink);}
+.plan-note{max-width:900px;margin:0 auto 14px;text-align:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;color:var(--ink-2);font-size:clamp(14.5px,1.9vw,16.5px);}
+@media(max-width:600px){.free-grid{grid-template-columns:1fr;}}
 .pcard .tag{font-size:13.5px;color:var(--muted);margin-bottom:18px;}
 .pcard ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
 .pcard li{display:flex;gap:10px;align-items:flex-start;color:var(--ink-2);}
@@ -962,30 +971,42 @@ footer{background:#12181d;color:#cbd3da;}
     <div class="sec-head reveal">
       <span class="eyebrow">Pricing</span>
       <h2>How Remira is <span class="st c-green">Priced<span class="wash w-green"></span></span></h2>
-      <p>Remira sees what is coming before it happens, and it is built to be trusted with the moments that matter most. It is priced for what it is: a tool worth having.</p>
+      <p>Only the person living with Type 1 pays. Everyone who follows along, parents, partners, and friends, is free forever. Remira is priced for what it is: a tool worth having.</p>
     </div>
+    <div class="pcard free reveal" style="max-width:900px;margin:0 auto 18px;">
+      <div class="free-grid">
+        <div class="free-head">
+          <div class="tier m">Followers</div>
+          <div class="price-line"><span class="amt">Free</span><span class="per">forever</span></div>
+        </div>
+        <div class="free-body">
+          <p><b>Share Remira with unlimited friends and family, at no cost.</b> Parents, partners, and DiaBuddies can follow along, get your heads ups, and check in, and they never pay a cent. Following is always free, for as many people as you like.</p>
+        </div>
+      </div>
+    </div>
+    <div class="plan-note reveal">Premium is priced per person living with T1D. The people who follow you are always free.</div>
     <div class="cols">
       <div class="pcard prem reveal">
         <div class="tier m">Individual</div>
         <div class="price-line"><span class="amt">$8.99</span><span class="per">/ month</span></div>
-        <div class="tag">or $60 a year. 3 weeks free for everyone on the waitlist.</div>
+        <div class="tag">or $60 a year, for one person with T1D. 3 weeks free on the waitlist.</div>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> The forecast for your day ahead</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> Gentle heads ups before a likely high or low</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> Decision Zones, the moments that matter most</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> DiaBuddy, so you are not doing this alone</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> Unlimited free followers for friends and family</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> Your monthly Remira wrapped</li>
         </ul>
       </div>
       <div class="pcard fam reveal d1">
         <div class="tier">Family</div>
         <div class="price-line"><span class="amt">$14.99</span><span class="per">/ month</span></div>
-        <div class="tag">or $99.99 a year. For up to 3 people living with T1D.</div>
+        <div class="tag">or $99.99 a year. Covers up to 3 people living with T1D.</div>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> Everything in Individual, for each person</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> Covers up to 3 family members with Type 1</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> Everyone gets their own private forecast</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> DiaBuddy keeps the whole family connected</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> Premium for up to 3 family members with Type 1</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> Parents and followers are always free, never a paid seat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> Everyone with T1D gets their own private forecast</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg> Unlimited free followers, plus DiaBuddy for the family</li>
         </ul>
       </div>
     </div>
@@ -1289,6 +1310,7 @@ footer{background:#12181d;color:#cbd3da;}
   root.querySelectorAll('.rmw-closewrap').forEach(function(b){b.addEventListener('click',close);});
 })();
 </script>
+
 
 
 

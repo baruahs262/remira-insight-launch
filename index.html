@@ -109,11 +109,6 @@ p{margin:0;} a{color:inherit;text-decoration:none;} img{display:block;max-width:
 .hdr .in{max-width:var(--maxw);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
 .logo-img{height:26px;width:auto;}
 .nav{display:none;align-items:center;gap:28px;}
-.hdr-actions{display:flex;align-items:center;gap:14px;}
-.hdr-android{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:var(--ink-2);white-space:nowrap;border-bottom:2px solid transparent;padding-bottom:1px;transition:color .15s,border-color .15s;}
-.hdr-android:hover{color:var(--mint-700);border-color:var(--mint);}
-.hdr-android .short{display:none;}
-@media(max-width:479px){.hdr-actions{gap:10px;}.hdr-android .full{display:none;}.hdr-android .short{display:inline;}}
 .nav a{font-weight:600;color:var(--ink-2);font-size:15px;transition:color .15s;}
 .nav a:hover{color:var(--mint-700);}
 
@@ -520,10 +515,7 @@ footer{background:#12181d;color:#cbd3da;}
     <nav class="nav" aria-label="Primary">
       <a href="#story">Our story</a><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
     </nav>
-    <div class="hdr-actions">
-      <a href="https://remira-ai.com/waitlist/" target="_blank" rel="noopener" class="hdr-android"><span class="full">Android waitlist</span><span class="short">Android</span></a>
-      <a href="#waitlist" class="btn btn-mint sm">Join the waitlist</a>
-    </div>
+    <a href="#waitlist" class="btn btn-mint sm">Join the waitlist</a>
   </div>
 </header>
 
@@ -1312,6 +1304,7 @@ footer{background:#12181d;color:#cbd3da;}
   root.querySelectorAll('.rmw-closewrap').forEach(function(b){b.addEventListener('click',close);});
 })();
 </script>
+
 
 
 

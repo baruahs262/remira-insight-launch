@@ -185,16 +185,26 @@
         <h3>2a. Account information</h3>
         <ul>
           <li>Email address (or, if you use Sign in with Apple with Hide My Email, a relay address)</li>
+          <li>Your name, as you enter it during setup</li>
           <li>Your role — whether you are the person with diabetes or a caregiver</li>
           <li>Which family you belong to</li>
+          <li>
+            <strong>Your date of birth.</strong> This one stays on your phone. We use it to
+            determine whether you are 16 or older, which decides how the account gets set up. It is
+            not sent to our servers.
+          </li>
         </ul>
         <p>
           We do not use passwords. You sign in with Apple or with a one-time code sent to your
           email.
         </p>
         <p>
-          Patients under 16 do not create accounts. Their device is paired to a family using a
-          code from their parent or guardian, and we collect no email address from them.
+          People under 16 do not create their own account. Remira is installed on the young
+          person’s phone, because that is where the CGM data arrives and where the alerts need to
+          land. Setup begins on that phone. When the date of birth entered shows the person is
+          under 16, the app stops and asks for a parent or legal guardian, who takes over on that
+          same phone and creates the account using their own email. There is no pairing code and no
+          separate parent-side setup. See section 7.
         </p>
 
         <h3>2b. Glucose and CGM data</h3>
@@ -230,7 +240,40 @@
           data.
         </p>
 
-        <h3>2d. Device and technical information</h3>
+        <h3>2d. Insulin, carbohydrate, and exercise you log</h3>
+        <p>
+          When you log a dose, a meal, or a workout, that entry is sent to and stored on our
+          servers. Each entry carries:
+        </p>
+        <ul>
+          <li>The time of the event</li>
+          <li>Its type — insulin, carbohydrate, or exercise</li>
+          <li>The amount — units, grams, or minutes</li>
+          <li>The descriptors you select, such as carbohydrate type, exercise type, and intensity</li>
+        </ul>
+        <div class="callout">
+          <p>
+            <strong>
+              We are explicit about this because it is insulin dosing history, and it leaves your
+              phone.
+            </strong>
+          </p>
+        </div>
+        <p>
+          <strong>The server needs it.</strong> Forecasts are computed on our servers, and the
+          engine cannot account for insulin already working, or carbohydrates already eaten, unless
+          it can see them. A dose we do not know about looks to the model like an unexplained fall.
+        </p>
+        <p>
+          <strong>Caregivers cannot see logged events.</strong> Our servers refuse caregiver
+          requests for them. See section 5.
+        </p>
+        <p>
+          The free-text label or tag you attach to an entry is a separate thing, and it stays on
+          your phone. See section 2g.
+        </p>
+
+        <h3>2e. Device and technical information</h3>
         <ul>
           <li>A device identifier we generate (not Apple’s advertising identifier)</li>
           <li>Push notification tokens, so we can send alerts</li>
@@ -239,33 +282,69 @@
           <li>Crash reports and performance diagnostics</li>
         </ul>
 
-        <h3>2e. Usage analytics</h3>
+        <h3>2f. Usage analytics</h3>
         <p>
           Which screens you open, which features you use, how often you open the app. We use
           Amplitude for this.
         </p>
         <p>
-          <strong>
-            We never send glucose values, forecasts, or any health measurement to our analytics
-            provider.
-          </strong>
-          Event names and counts only.
+          Our analytics events carry properties, not only names. Sent alongside them:
+        </p>
+        <ul>
+          <li>Your role — patient or caregiver — on every event</li>
+          <li>Which CGM service you have connected, and its region</li>
+          <li>Which step of onboarding you reached</li>
+          <li>The confidence score attached to your first forecast</li>
+          <li>
+            When we detect a gap in your data: how long since the last Apple Health sample, what we
+            believe caused it, and how serious it is
+          </li>
+          <li>
+            That you logged an event, and its type — insulin, carbohydrate, or exercise. Never the
+            amount.
+          </li>
+          <li>
+            Your glucose display unit, whether notifications are enabled, whether you are in
+            preview mode, whether you have real data yet
+          </li>
+        </ul>
+        <div class="callout">
+          <p>
+            <strong>
+              We do not send Amplitude any glucose reading, any forecast curve, any estimated A1C
+              or time-in-range figure, or the amount of any dose, carbohydrate, or exercise entry.
+            </strong>
+          </p>
+        </div>
+        <p>
+          We also switch off the collection Amplitude performs by default on IP address, city,
+          region, DMA, and carrier.
         </p>
 
-        <h3>2f. What stays on your device and never reaches us</h3>
+        <h3>2g. What stays on your device and never reaches us</h3>
         <ul>
           <li>Your journal and reflections</li>
           <li>Free-text notes</li>
-          <li>Event labels and tags</li>
+          <li>
+            The labels and tags you write on a logged event — the event itself is sent to us, the
+            words you attach to it are not (section 2d)
+          </li>
           <li>Day-type descriptions</li>
           <li>Streaks, points, and badges</li>
+          <li>Your date of birth (section 2a)</li>
+          <li>Whether you experience menstrual cycles</li>
+          <li>Whether you drink alcohol</li>
         </ul>
         <p>
-          This information is stored in the app on your phone. We do not receive it, we cannot see
-          it, and it is not visible to caregivers. If you delete the app, it is gone.
+          The last two are asked during setup and can be changed at any time in Settings. They are
+          sensitive — reproductive health and alcohol use — which is why they never leave the phone.
+        </p>
+        <p>
+          All of this is stored in the app on your phone. We do not receive it, we cannot see it,
+          and it is not visible to caregivers. If you delete the app, it is gone.
         </p>
 
-        <h3>2g. What we do not collect</h3>
+        <h3>2h. What we do not collect</h3>
         <ul>
           <li>We do not access your contacts, camera, microphone, or precise location.</li>
           <li>
@@ -290,10 +369,10 @@
             <tbody>
               <tr>
                 <td>Cloudflare</td>
-                <td>Glucose readings, forecasts, encrypted CGM service credentials, account and family records</td>
+                <td>Glucose readings, logged insulin/carbohydrate/exercise events, forecasts, encrypted CGM service credentials, account and family records</td>
               </tr>
               <tr><td>Supabase</td><td>Email address and sign-in identity</td></tr>
-              <tr><td>Amplitude</td><td>Usage events. No health data</td></tr>
+              <tr><td>Amplitude</td><td>Usage events and the properties described in section 2f. No glucose readings or forecasts</td></tr>
               <tr><td>Resend</td><td>Delivery of sign-in and account emails</td></tr>
               <tr><td>Apple</td><td>Push notification delivery</td></tr>
               <tr><td>Stripe</td><td>Payment processing and card data</td></tr>
@@ -314,10 +393,14 @@
           you have approved.
         </p>
         <p>
-          <strong>To improve Remira.</strong> We use glucose data across our users to build and
-          improve the models that produce forecasts and pattern detection. A model trained on more
-          people produces better forecasts for everyone. Where we do this, we work with data that
-          has been stripped of your name, email, and account identifiers.
+          Estimated A1C is exactly that — an estimate, calculated from your glucose data. It is not
+          a laboratory HbA1c test, it is not a substitute for one, and the two figures will differ.
+        </p>
+        <p>
+          <strong>To improve Remira.</strong> We use glucose data and logged events across our
+          users to build and improve the models that produce forecasts and pattern detection. A
+          model trained on more people produces better forecasts for everyone. Where we do this, we
+          work with data that has been stripped of your name, email, and account identifiers.
         </p>
         <p>
           <strong>To support you.</strong> A small number of authorized Remira personnel may access
@@ -359,12 +442,16 @@
         <ul>
           <li>Current and recent glucose readings</li>
           <li>Forecasts and predicted patterns</li>
-          <li>Time in range, average glucose, estimated A1C</li>
+          <li>
+            Time in range, average glucose, estimated A1C (an estimate from glucose data, not a lab
+            result)
+          </li>
           <li>Alerts and notifications</li>
           <li>Whether the patient’s device has recently checked in</li>
         </ul>
         <p><strong>A caregiver cannot see:</strong></p>
         <ul>
+          <li>Insulin, carbohydrate, or exercise entries the patient logs</li>
           <li>Journal entries, reflections, or notes</li>
           <li>Event labels or tags</li>
           <li>Anything the patient types</li>
@@ -373,7 +460,7 @@
           The rule we follow:
           <strong>
             a caregiver sees information calculated from glucose numbers and time. They never see
-            anything the patient wrote or tapped.
+            anything the patient wrote, tapped, or logged.
           </strong>
           This is enforced on our servers, not just hidden in the app.
         </p>
@@ -405,21 +492,29 @@
           of the sensor connection you chose. We keep the password because the token expires and
           the session has to be re-established periodically without asking you to sign in again.
         </p>
-        <p>
-          LibreLinkUp works on a follower model: the person wearing the sensor shares their
-          readings with a LibreLinkUp account. If you are connecting as a follower, the person
-          wearing the sensor should know and agree that you are doing so, and that their readings
-          will be sent to Remira.
-        </p>
 
         <h3>Both services</h3>
+        <p>
+          <strong>We store the password you give us, encrypted at rest</strong>, because both
+          services require us to re-authenticate periodically to keep your readings flowing. We
+          never display it, never share it, and delete it when you disconnect or delete your
+          account.
+        </p>
+        <div class="callout">
+          <p>
+            <strong>Be clear about what that encryption does and does not do. Remira can decrypt
+            your password. It has to.</strong> Signing in on your behalf requires the password in
+            the clear at the moment of the request, and a scheduled job on our servers does exactly
+            that to keep your session alive. The encryption protects the password from anyone who
+            obtains our stored data. It does not put it beyond our own reach.
+          </p>
+          <p>
+            <strong>So: use a dedicated follower account rather than your primary CGM login,
+            wherever the service supports it.</strong> We recommend it for this reason. A password
+            you hand to us is recoverable, not sealed.
+          </p>
+        </div>
         <ul>
-          <li>
-            <strong>We store the password you give us, encrypted at rest</strong>, because both
-            services require us to re-authenticate periodically to keep your readings flowing. We
-            never display it, never share it, and delete it when you disconnect or delete your
-            account.
-          </li>
           <li>
             <strong>
               Remira is not affiliated with, endorsed by, or partnered with Dexcom or Abbott.
@@ -439,36 +534,54 @@
             credentials and tokens.
           </li>
         </ul>
-        <p>
-          Where the service supports it, we recommend using a dedicated follower account rather
-          than your primary login.
-        </p>
       </section>
 
       <section>
         <h2>7. Children’s privacy</h2>
         <p>
-          Remira is not directed to children under 13, and children under 16 cannot create their
-          own Remira account.
+          Remira is not directed to children under 13, and no one under 16 creates their own Remira
+          account.
         </p>
 
         <h3>How under-16 patients use Remira</h3>
         <p>
-          A parent or legal guardian creates the account, agrees to these terms, and generates a
-          pairing code. The child enters that code on their device.
-          <strong>
-            We do not collect an email address, name, or contact information from the child.
-          </strong>
-          We collect their glucose readings and device information in order to provide the service
-          the parent signed up for.
+          <strong>The app goes on the young person’s phone.</strong> That is where the CGM writes
+          its readings and where the alerts have to arrive, so that is where the account has to
+          live.
+        </p>
+        <p>
+          Setup begins on that phone. The app asks for a name and a date of birth. When the date of
+          birth shows the person is under 16, setup stops and hands off: the app asks for a parent
+          or legal guardian, who takes over on that same device, reads and agrees to the Terms, and
+          creates the account with their own email address.
+        </p>
+        <p>
+          <strong>There is no pairing code.</strong> A parent does not create an account elsewhere
+          and then link a child’s phone to it. Every Remira account originates on the phone of the
+          person with diabetes.
+        </p>
+
+        <h3>What we collect about a young person</h3>
+        <ul>
+          <li>The name entered during setup</li>
+          <li>Glucose readings, and the device and technical information in section 2e</li>
+          <li>
+            Diabetes management settings, and any insulin, carbohydrate, or exercise events logged
+            (section 2d)
+          </li>
+        </ul>
+        <p>
+          We do not collect an email address, phone number, or other contact information from a
+          person under 16. The contact details on the account are the parent’s or guardian’s. Date
+          of birth stays on the device.
         </p>
 
         <h3>Parental consent</h3>
         <p>
-          By creating an account and inviting a child under 13, the parent or guardian provides
-          consent for Remira to collect and use that child’s information as described in this
-          policy. Where required, we verify parental identity through the payment method used for
-          the subscription.
+          By completing setup on the young person’s device and creating the account, the parent or
+          guardian provides consent for Remira to collect and use that child’s information as
+          described in this policy. Where required, we verify parental identity through the payment
+          method used for the subscription.
         </p>
 
         <h3>Rights of parents and guardians</h3>
@@ -476,7 +589,7 @@
         <ul>
           <li>Review the personal information we hold about your child</li>
           <li>Ask us to delete it</li>
-          <li>Refuse to permit further collection, by removing the child’s device from the family</li>
+          <li>Refuse to permit further collection, by deleting the account</li>
         </ul>
         <p>
           Contact <strong><a href="mailto:support@remira-ai.com">support@remira-ai.com</a></strong>.
@@ -540,30 +653,32 @@
         </p>
         <ul>
           <li>Delete your email address, sign-in identity, and account records</li>
+          <li>Delete your name</li>
           <li>Delete your encrypted CGM service passwords and tokens</li>
           <li>Delete your push tokens and device records</li>
           <li>Delete your family and caregiver relationships</li>
         </ul>
         <p>This happens within 30 days.</p>
         <p>
-          <strong>Glucose readings are handled differently.</strong> By default we retain them with
-          all identifying information removed, and use them to improve Remira’s models. They are no
-          longer linked to you, your email, or your account.
+          <strong>Glucose readings and logged treatment events are handled differently.</strong> By
+          default we retain them with all identifying information removed, and use them to improve
+          Remira’s models. They are no longer linked to you, your email, or your account.
         </p>
         <p>
-          If you want your glucose history erased as well, say so and we will erase it. Email
+          If you want that history erased as well, say so and we will erase it. Email
           <strong><a href="mailto:support@remira-ai.com">support@remira-ai.com</a></strong> and ask
           for full erasure.
         </p>
         <p>
           <strong>If you are in the UK or EEA, we perform full erasure by default</strong>,
-          including glucose history, unless you tell us otherwise.
+          including glucose and event history, unless you tell us otherwise.
         </p>
 
         <h3>Data on your device</h3>
         <p>
-          Your journal, reflections, and labels live only on your phone. Deleting the app deletes
-          them. We cannot delete them for you, because we never had them.
+          Your journal, reflections, labels, date of birth, and the setup answers listed in section
+          2g live only on your phone. Deleting the app deletes them. We cannot delete them for you,
+          because we never had them.
         </p>
 
         <h3>Legal holds</h3>
@@ -651,11 +766,8 @@
         <p>
           Remira is based in the United States and our infrastructure processes data in the United
           States and other countries. If you use Remira from outside the US, your data will be
-          transferred to the US, where privacy laws differ from your own.
-        </p>
-        <p>
-          Where required, we rely on Standard Contractual Clauses or other approved transfer
-          mechanisms.
+          transferred to the US, where privacy laws differ from your own. Where required, we rely
+          on Standard Contractual Clauses or other approved transfer mechanisms.
         </p>
       </section>
 

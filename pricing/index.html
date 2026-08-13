@@ -202,10 +202,17 @@ footer .cr{color:#8b97a2;font-size:13px;margin-top:12px;}
      TIERS — edit here. Everything below renders from this array.
      ==========================================================================
      @typedef {Object} Tier
-     @property {string}   name         Shown as the card heading.
-     @property {string}   description  One line under the price.
-     @property {string[]} features     Bullet list.
-     @property {{month: string, year: string}} priceId  Paddle price IDs.
+     @property {string}   name           Shown as the card heading.
+     @property {string}   description    One line under the price.
+     @property {string[]} features       Bullet list.
+     @property {Object}   priceId        Paddle price IDs, one per frequency.
+     @property {string}   priceId.month
+     @property {string}   priceId.year
+
+     Keep the braces un-nested above: GitHub Pages runs these files through Jekyll,
+     whose Liquid parser treats a doubled brace as a template tag and fails the
+     whole site build. The .nojekyll file at the site root disables that, but the
+     habit is worth keeping.
   */
 
   /** @type {Tier[]} */

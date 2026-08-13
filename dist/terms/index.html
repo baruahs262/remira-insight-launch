@@ -172,17 +172,30 @@
 
       <section>
         <h2>2. Who can use Remira</h2>
-        <p><strong>You must be 16 or older to create a Remira account.</strong></p>
         <p>
-          <strong>People with diabetes under 16</strong> may use Remira only through a family
-          account created by a parent or legal guardian. The parent or guardian creates the
-          account, agrees to these Terms on the young person’s behalf, generates a pairing code,
-          and remains responsible for that use.
+          <strong>You must be 16 or older to agree to these Terms and hold a Remira account.</strong>
+        </p>
+        <p>
+          A person under 16 who has diabetes may use Remira, but a parent or legal guardian must set
+          the account up and agree to these Terms on their behalf.
+        </p>
+        <p>
+          <strong>How that works.</strong> Remira is installed on the young person’s phone, because
+          that is where the CGM data arrives and where the alerts have to land. Setup begins there —
+          a name, then a date of birth. When the date of birth shows the person is under 16, setup
+          stops and asks for a parent or legal guardian. The parent or guardian takes over on that
+          same phone, agrees to these Terms, and creates the account with their own email address.
+          They hold the account and remain responsible for its use.
+        </p>
+        <p>
+          <strong>There is no pairing code.</strong> A parent does not create an account elsewhere
+          and link the child’s phone to it. Every account originates on the phone of the person with
+          diabetes.
         </p>
         <p>
           <strong>Children under 13.</strong> We do not knowingly collect personal information from
-          children under 13 except through a parent or guardian who has created the account, agreed
-          to these Terms, and consented to the collection described in our
+          children under 13 except through a parent or guardian who has completed setup on the
+          child’s device, agreed to these Terms, and consented to the collection described in our
           <a href="/privacy/">Privacy Policy</a>. Parents may review or delete their child’s
           information, or stop further collection, at any time by contacting
           <a href="mailto:support@remira-ai.com">support@remira-ai.com</a>.
@@ -201,8 +214,10 @@
         <p>Remira is a personal wellness and information tool. It:</p>
         <ul>
           <li>Reads glucose data from Apple Health and, optionally, from Dexcom Share or FreeStyle LibreLinkUp</li>
+          <li>Records the insulin, carbohydrates, and exercise you choose to log, and uses them to sharpen its forecasts</li>
           <li>Identifies patterns in that data</li>
           <li>Produces forecasts of likely near-term glucose movement</li>
+          <li>Calculates statistics from your data, including time in range, average glucose, and an estimated A1C</li>
           <li>Sends notifications about current and predicted readings</li>
           <li>Lets you share this information with family members and caregivers you choose</li>
         </ul>
@@ -225,6 +240,14 @@
             </strong>
           </p>
         </div>
+
+        <h3>Estimated A1C is an estimate</h3>
+        <p>
+          Where Remira shows an A1C figure, it is an <strong>estimated</strong> A1C, calculated from
+          the glucose data available to the app. It is not a laboratory HbA1c test and it is not a
+          substitute for one. The two will differ, sometimes by a meaningful margin, and the
+          estimate is only as good as the data behind it. Use the number your care team measures.
+        </p>
 
         <h3>Alerts are not an alarm system</h3>
         <p>This is important.</p>
@@ -256,8 +279,8 @@
         <h3>Forecasts are estimates</h3>
         <p>
           Forecasts are statistical estimates from past data. Glucose is affected by many things
-          Remira cannot see. Forecasts will sometimes be wrong, sometimes substantially. They are
-          context, not instruction.
+          Remira cannot see, including anything you do not log. Forecasts will sometimes be wrong,
+          sometimes substantially. They are context, not instruction.
         </p>
 
         <h3>You accept these risks</h3>
@@ -293,13 +316,19 @@
           remove members. Invite codes are single-use and expire.
         </p>
         <p>
+          <strong>Invites travel one direction.</strong> The account of the person with diabetes
+          issues them; caregivers redeem them. A caregiver cannot create a family or issue a code to
+          anyone.
+        </p>
+        <p>
           <strong>Every member can see who else is in the family.</strong> We do this deliberately,
           so nobody is watched without knowing it.
         </p>
         <p>
           <strong>Caregivers see glucose information only.</strong> Readings, forecasts, patterns,
-          statistics, alerts, and check-ins. They do not see journal entries, notes, labels, or
-          anything else the patient writes. This is enforced by our servers.
+          statistics, alerts, and check-ins. They do not see journal entries, notes, labels, the
+          insulin, carbohydrate, or exercise entries the patient logs, or anything else the patient
+          writes. This is enforced by our servers.
         </p>
         <p>
           <strong>
@@ -308,8 +337,8 @@
           We cannot control what they do with it. Remove access at any time; removal is immediate.
         </p>
         <p>
-          If you are a parent creating an account for a young person, you are responsible for that
-          account and for the appropriateness of the access you grant.
+          If you are a parent who has set up an account for a young person, you are responsible for
+          that account and for the appropriateness of the access you grant.
         </p>
       </section>
 
@@ -332,6 +361,15 @@
           the token, and the connection details encrypted, and re-authenticate on your behalf when
           the token expires.
         </p>
+        <div class="callout">
+          <p>
+            <strong>We can decrypt the password you give us.</strong> Signing in on your behalf
+            requires it in the clear at the moment of the request, and our servers do that on a
+            schedule to keep your readings flowing. Encryption at rest protects the credential from
+            anyone who obtains our stored data. It does not put it beyond our reach. Understand that
+            before you hand over a CGM-portal login.
+          </p>
+        </div>
         <p>
           <strong>You must be entitled to the data you connect.</strong> LibreLinkUp works on a
           follower model. If you connect as a follower rather than as the person wearing the
@@ -351,9 +389,9 @@
           governed by that company’s own terms.
         </p>
         <p>
-          Where the service supports it, we suggest using a dedicated follower account rather than
-          your primary login. Disconnect at any time in settings, which deletes the stored
-          credentials.
+          <strong>Where the service supports it, use a dedicated follower account rather than your
+          primary login.</strong> Given that we can decrypt what you give us, this is the safer
+          choice. Disconnect at any time in settings, which deletes the stored credentials.
         </p>
       </section>
 
@@ -479,12 +517,16 @@
             MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT; ANY WARRANTY
             THAT THE APP WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE; AND ANY WARRANTY AS
             TO THE ACCURACY, COMPLETENESS, RELIABILITY, OR TIMELINESS OF ANY DATA, READING,
-            FORECAST, PATTERN, ALERT, OR NOTIFICATION.
+            FORECAST, PATTERN, STATISTIC, ESTIMATED A1C, ALERT, OR NOTIFICATION.
           </p>
           <p>
             GLUCOSE DATA ORIGINATES FROM YOUR CGM AND REACHES US THROUGH APPLE HEALTH, DEXCOM
             SHARE, OR FREESTYLE LIBRELINKUP. WE DO NOT WARRANT THE ACCURACY, COMPLETENESS,
             TIMELINESS, OR CONTINUED AVAILABILITY OF ANY OF THOSE SOURCES.
+          </p>
+          <p>
+            ANY A1C FIGURE SHOWN BY REMIRA IS AN ESTIMATE DERIVED FROM GLUCOSE DATA. IT IS NOT A
+            LABORATORY MEASUREMENT AND WE DO NOT WARRANT THAT IT CORRESPONDS TO ONE.
           </p>
           <p>
             WE DO NOT WARRANT THAT NOTIFICATIONS WILL BE DELIVERED, DELIVERED ON TIME, OR DELIVERED

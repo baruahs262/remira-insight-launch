@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Welcome to Remira Premium</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#12B884">
+<link rel="icon" href="/remira-favicon.png">
+<link rel="apple-touch-icon" href="/remira-favicon.png">
+
+<!--
+  Where Paddle Checkout sends people after a successful subscription
+  (settings.successUrl in /pricing/). Paddle appends ?_ptxn=<transaction id>, which
+  this page deliberately ignores — entitlement is granted from the subscription in
+  the app's backend, never from a query string on a static page. No JS at all.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#1B2A33; --ink-2:#3C4A54; --muted:#63707A;
+  --line-2:#DDDFE3;
+  --mint:#12B884; --mint-700:#0A7C57;
+  --ink-on-mint:#04241A;
+}
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{margin:0;color:var(--ink);
+  background:linear-gradient(180deg,
+    #EFEBFB 0%, #F1ECFB 12%, #F7EEF6 28%, #FCEFEC 42%, #FBF1EE 56%,
+    #F2F4F1 70%, #E9F7F1 86%, #E9F7F1 100%);
+  background-attachment:fixed;
+  font-family:'Source Sans 3',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;}
+h1{font-family:'Plus Jakarta Sans','Source Sans 3',sans-serif;font-weight:800;letter-spacing:-0.02em;
+  font-size:clamp(28px,6vw,38px);line-height:1.08;margin:0 0 12px;text-wrap:balance;}
+p{margin:0;}
+a{color:inherit;text-decoration:none;}
+:focus-visible{outline:3px solid #6C5CE7;outline-offset:3px;border-radius:6px;}
+
+.card{background:rgba(255,255,255,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1.5px solid var(--mint);border-radius:22px;padding:clamp(30px,6vw,44px) clamp(24px,5vw,38px);
+  box-shadow:0 30px 60px -30px rgba(18,184,132,.5);max-width:440px;}
+
+.check{width:64px;height:64px;border-radius:50%;background:rgba(18,184,132,.12);
+  border:1.5px solid rgba(18,184,132,.4);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;}
+.check svg{width:32px;height:32px;color:var(--mint-700);}
+
+.lead{color:var(--ink-2);margin-bottom:6px;}
+.sub{color:var(--muted);font-size:15px;}
+
+.next{margin:26px 0 0;padding-top:22px;border-top:1px solid var(--line-2);
+  display:flex;flex-direction:column;gap:12px;align-items:center;}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:800;font-size:16px;border-radius:999px;padding:14px 26px;background:var(--mint);
+  color:var(--ink-on-mint);box-shadow:0 14px 30px -14px rgba(18,184,132,.75);
+  transition:transform .15s ease,box-shadow .22s ease;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 20px 40px -16px rgba(18,184,132,.85);}
+.foot{font-size:14px;color:var(--muted);}
+.foot a{font-weight:600;}
+.foot a:hover{color:var(--mint-700);}
+@media(prefers-reduced-motion:reduce){ .btn:hover{transform:none;} }
+</style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="check" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6 9 17l-5-5"/>
+      </svg>
+    </div>
+
+    <h1>Welcome to Premium.</h1>
+    <p class="lead">Your subscription is active. Paddle has emailed your receipt.</p>
+    <p class="sub">Open Remira on your phone and Premium will be waiting — you may need to pull down to refresh.</p>
+
+    <div class="next">
+      <a class="btn" href="https://apps.apple.com/us/app/remira-t1d/id6759989867">Open Remira</a>
+      <p class="foot">Something not right? <a href="/support/">We'll sort it out</a>.</p>
+    </div>
+  </main>
+</body>
+</html>

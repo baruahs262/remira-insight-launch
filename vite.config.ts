@@ -13,9 +13,12 @@ const STATIC_PAGES = [
   "waitlist",
   "external",
   "premium",
+  "pricing",
+  "welcome",
   "privacy",
   "terms",
   "support",
+  "refunds",
   "auth/done",
 ];
 const serveStaticPages = () => ({

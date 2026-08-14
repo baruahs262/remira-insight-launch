@@ -170,6 +170,7 @@ footer .cr{color:#8b97a2;font-size:13px;margin-top:12px;}
     <p class="fineprint reveal d2">
       Payments and invoicing are handled by Paddle, our merchant of record.
       Cancel any time — you keep Premium until the end of the period you paid for.
+      See our <a href="/refunds/">refund policy</a>.
     </p>
 
   </div>
@@ -298,6 +299,27 @@ footer .cr{color:#8b97a2;font-size:13px;margin-top:12px;}
   }
   var customerEmail = readEmail();
 
+  /* --------------------------------------------------- Remira account id */
+  /* The EXACT join key between this purchase and a Remira account, passed through to
+     the webhook as custom_data.person_id and mirrored into the backend's
+     paddle_customer table. Without it the backend can only match on the email typed
+     at checkout — which the buyer is free to change, leaving a paid subscription
+     that maps to nobody.
+
+     The app opens /pricing/?email=…&person_id=<supabase auth.users.id>. UUID-shaped
+     or ignored: it is echoed into custom_data, and the server validates it again
+     before use, so a hand-edited value can at worst attach a subscription the
+     attacker paid for to an account id they guessed. */
+  function readPersonId() {
+    var raw = new URLSearchParams(location.search).get('person_id');
+    if (!raw) return null;
+    var id = raw.trim();
+    return /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(id)
+      ? id
+      : null;
+  }
+  var personId = readPersonId();
+
   /* --------------------------------------------------------------- render */
   function buildCards() {
     if (TIERS.length > 1) colsEl.classList.add('multi');
@@ -406,6 +428,11 @@ footer .cr{color:#8b97a2;font-size:13px;margin-top:12px;}
       }
     };
     if (customerEmail) options.customer = { email: customerEmail };
+    /* Rides along on the transaction, and onto the subscription created from it, so
+       the fulfillment webhook can bind this purchase to a Remira account exactly
+       rather than guessing from the email. Omitted entirely when absent — an empty
+       object here would overwrite nothing useful but would still ship a key. */
+    if (personId) options.customData = { person_id: personId };
 
     window.Paddle.Checkout.open(options);
   }

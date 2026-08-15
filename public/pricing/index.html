@@ -152,7 +152,21 @@ footer .cr{color:#8b97a2;font-size:13px;margin-top:12px;}
     <div class="sec-head reveal">
       <span class="eyebrow">Pricing</span>
       <h2>Subscribe to <span class="st c-green">Remira Premium</span></h2>
-      <p>Prices are shown in your local currency, with any tax for your location already included.</p>
+      <!--
+        ⚠️ DO NOT restore the previous wording ("with any tax for your location already
+        included"). It was true in the UK/EU and FALSE in the US, and the checkout
+        contradicted it to the customer's face.
+
+        The prices carry tax_mode "location", so Paddle follows each country's
+        convention. Measured against the same $8.99 price:
+          GB  -> subtotal $7.49 + tax $1.50 = $8.99 total   (tax carved OUT — page matches)
+          US  -> subtotal $8.99 + tax $0.72 = $9.71 total   (tax added ON TOP — page did not)
+        PricePreview reports $0.00 tax for a US address, so the figure rendered on the
+        cards is pre-tax there and the checkout total is higher. This sentence is the
+        only thing setting that expectation, so it has to be true in both regimes.
+      -->
+      <p>Prices are shown in your local currency. Where sales tax applies, it is added at
+         checkout — you will see your exact total before you pay.</p>
     </div>
 
     <!-- Populated by the script only when Paddle cannot be reached or configured. -->
@@ -228,6 +242,13 @@ footer .cr{color:#8b97a2;font-size:13px;margin-top:12px;}
         'DiaBuddy, so you are not doing this alone',
         'Your monthly Remira wrapped'
       ],
+      /* Production price IDs, and the default.
+         ⚠️ PRICE IDS ARE ACCOUNT-SCOPED. A sandbox account has entirely different
+         pri_… values, so hardcoding these while making the ACCOUNT configurable via
+         paddle-config.js was inconsistent: switching to sandbox would keep asking for
+         production prices, and Paddle would reject the checkout. `applyPriceOverrides`
+         below lets the generated config supply sandbox IDs. When the config carries
+         none — which is the case for the deployed production config — these stand. */
       priceId: {
         month: 'pri_01kzxp1492qfdakfz3haq67ekx',
         year:  'pri_01kzxp1wnk1t9r9w99kabd3wty'
@@ -437,10 +458,32 @@ footer .cr{color:#8b97a2;font-size:13px;margin-top:12px;}
     window.Paddle.Checkout.open(options);
   }
 
+  /* --------------------------------------------------- price ID overrides */
+  /* Point the tiers at a different account's prices, when the generated config says
+     to. Only sandbox configs carry `priceIds`; the deployed production config has no
+     such key, so production keeps the IDs hardcoded in TIERS and this is a no-op.
+
+     Validated per-id rather than trusted wholesale: a malformed override silently
+     falling through to a production price ID while `Paddle.Environment` is sandbox
+     would produce a confusing "price not found" at checkout rather than here. */
+  function applyPriceOverrides(cfg) {
+    var ids = cfg && cfg.priceIds;
+    if (!ids) return;
+    TIERS.forEach(function (tier) {
+      ['month', 'year'].forEach(function (period) {
+        var id = ids[period];
+        if (typeof id === 'string' && /^pri_[a-z0-9]{26}$/.test(id)) {
+          tier.priceId[period] = id;
+        }
+      });
+    });
+  }
+
   /* ---------------------------------------------------------------- boot */
+  var cfg = readConfig();
+  applyPriceOverrides(cfg);
   buildCards();
 
-  var cfg = readConfig();
   if (cfg) {
     if (!window.Paddle) {
       showError('Checkout could not load.', 'Paddle.js was blocked or failed to load. Disable any ad blocker and reload.');

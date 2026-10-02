@@ -81,6 +81,7 @@ for (const [src, out] of pairs) {
   if (!existsSync(src)) {
     problems.push(`${rel(src)} is missing`);
   } else if (!existsSync(out)) {
+    if (REQUIRED.some((page) => join(DIST, page) === out)) continue; // already reported
     problems.push(`${rel(out)} is missing (copy it from ${rel(src)})`);
   } else if (!readFileSync(src).equals(readFileSync(out))) {
     problems.push(`${rel(out)} differs from ${rel(src)} (copy the source page into dist/)`);

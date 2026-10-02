@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Subscribe to Remira Premium — Pricing</title>
-<meta name="description" content="Subscribe to Remira Premium. See the price in your local currency, choose monthly or yearly, and check out in one page.">
+<title>Remira Premium — Pricing</title>
+<meta name="description" content="Remira Premium lives in the iPhone app. 21 days free with no card, then $8.99 a month or $59.99 a year through the App Store. One subscription covers the patient and every caregiver.">
 <link rel="canonical" href="https://remira-ai.com/pricing/">
 <meta name="theme-color" content="#12B884">
 <link rel="icon" href="/remira-favicon.png">
 <link rel="apple-touch-icon" href="/remira-favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Remira">
-<meta property="og:title" content="Subscribe to Remira Premium">
-<meta property="og:description" content="See the price in your local currency, choose monthly or yearly, and check out in one page.">
+<meta property="og:title" content="Remira Premium — Pricing">
+<meta property="og:description" content="21 days free with no card, then $8.99 a month or $59.99 a year in the iPhone app. One subscription covers the patient and every caregiver.">
 <meta property="og:url" content="https://remira-ai.com/pricing/">
 <meta property="og:image" content="https://remira-ai.com/og-image.png">
 
@@ -20,10 +20,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 
+<!--
+  Static on purpose: no scripts, no query parameters, no checkout. Remira Premium is
+  bought and managed only inside the iPhone app, through Apple In-App Purchase.
+  Design tokens are lifted from /premium/ so this page matches the page that sells it.
+-->
 <style>
-/* Design tokens lifted from /premium/ so the checkout step looks like the page that
-   sold it. Fonts come from Google Fonts here rather than the 1.26 MB of inlined
-   base64 woff2 that /premium/ carries — this page has to paint fast. */
 :root{
   --bg:#FFFFFF; --surface:#FFFFFF;
   --ink:#1B2A33; --ink-2:#3C4A54; --muted:#63707A;
@@ -52,7 +54,7 @@ p{margin:0;} a{color:inherit;text-decoration:none;} img{display:block;max-width:
 .section{padding:clamp(40px,7vw,84px) 0;position:relative;}
 .eyebrow{font-family:'Source Sans 3',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.15em;font-size:13px;color:var(--mint-700);}
 .sec-head{max-width:700px;margin:0 auto clamp(28px,4vw,40px);text-align:center;}
-.sec-head h2{font-size:clamp(30px,5.4vw,52px);margin:16px auto 18px;max-width:16ch;}
+.sec-head h1{font-size:clamp(30px,5.4vw,52px);margin:16px auto 18px;max-width:16ch;}
 .sec-head p{color:var(--muted);font-size:clamp(17px,2.2vw,20px);}
 .st{display:inline;} .st.c-green{color:var(--mint-700);}
 
@@ -65,54 +67,48 @@ p{margin:0;} a{color:inherit;text-decoration:none;} img{display:block;max-width:
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;
-  border:none;border-radius:999px;cursor:pointer;transition:transform .15s ease,box-shadow .22s ease,opacity .2s ease;letter-spacing:-0.01em;}
-.btn:hover:not(:disabled){transform:translateY(-2px);}
+  border:none;border-radius:999px;cursor:pointer;transition:transform .15s ease,box-shadow .22s ease;letter-spacing:-0.01em;}
+.btn:hover{transform:translateY(-2px);}
 .btn-mint{background:var(--mint);color:var(--ink-on-mint);padding:15px 26px;font-size:16px;box-shadow:0 14px 30px -14px rgba(18,184,132,.75);}
-.btn-mint:hover:not(:disabled){box-shadow:0 20px 40px -16px rgba(18,184,132,.85);}
-.btn:disabled{opacity:.45;cursor:not-allowed;}
+.btn-mint:hover{box-shadow:0 20px 40px -16px rgba(18,184,132,.85);}
+.btn svg{width:20px;height:20px;flex:none;}
 
-/* billing period toggle */
-.toggle-row{display:flex;justify-content:center;margin:0 auto clamp(28px,4vw,38px);}
-.toggle{display:inline-flex;background:rgba(255,255,255,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.7);border-radius:999px;padding:5px;gap:4px;box-shadow:var(--shadow-sm);}
-.toggle button{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px;color:var(--muted);
-  background:transparent;border:none;border-radius:999px;padding:10px 24px;cursor:pointer;
-  transition:background .2s ease,color .2s ease,box-shadow .2s ease;}
-.toggle button:hover{color:var(--ink);}
-.toggle button[aria-checked="true"]{background:var(--mint);color:var(--ink-on-mint);box-shadow:0 10px 22px -12px rgba(18,184,132,.85);}
-
-/* pricing cards — lifted from /premium/ */
-.cols{display:grid;grid-template-columns:1fr;gap:18px;max-width:520px;margin:0 auto;}
-.cols.multi{max-width:900px;}
-@media(min-width:760px){ .cols.multi{grid-template-columns:1fr 1fr;} }
+/* pricing card — lifted from /premium/ */
+.cols{display:grid;grid-template-columns:1fr;gap:18px;max-width:560px;margin:0 auto;}
 .pcard{background:rgba(255,255,255,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border:1px solid rgba(255,255,255,.7);border-radius:22px;padding:28px;box-shadow:0 20px 50px -28px rgba(18,140,90,.35);
   display:flex;flex-direction:column;}
 .pcard.prem{border:1.5px solid var(--mint);box-shadow:0 30px 60px -30px rgba(18,184,132,.5);}
 .pcard .tier{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:19px;margin-bottom:4px;color:var(--mint-700);}
-.price-line{display:flex;align-items:baseline;gap:7px;margin:2px 0 6px;min-height:44px;}
+.price-line{display:flex;align-items:baseline;gap:7px;margin:2px 0 6px;}
 .price-line .amt{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(32px,4.4vw,42px);letter-spacing:-0.02em;color:var(--ink);line-height:1;}
 .price-line .per{font-size:15px;color:var(--muted);font-weight:600;}
 .pcard .tag{font-size:13.5px;color:var(--muted);margin-bottom:18px;}
+.pcard .tag .yr{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:18px;color:var(--mint-700);white-space:nowrap;}
 .pcard ul{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:12px;}
 .pcard li{display:flex;gap:10px;align-items:flex-start;color:var(--ink-2);}
 .pcard li svg{width:19px;height:19px;color:var(--mint);flex:none;margin-top:3px;}
-.pcard .btn{width:100%;margin-top:auto;}
+.pcard .btn{width:100%;}
 
-/* price skeleton, shown until PricePreview resolves */
-.skel{display:inline-block;width:112px;height:.68em;border-radius:7px;vertical-align:baseline;
-  background:linear-gradient(90deg,rgba(27,42,51,.07),rgba(27,42,51,.15),rgba(27,42,51,.07));
-  background-size:200% 100%;animation:shimmer 1.25s linear infinite;}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+/* how it works */
+.steps{max-width:760px;margin:clamp(36px,5vw,56px) auto 0;}
+.steps h2{font-size:clamp(24px,3.6vw,32px);text-align:center;margin-bottom:22px;}
+.steps ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;counter-reset:step;}
+.steps li{counter-increment:step;position:relative;background:rgba(255,255,255,.62);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.7);border-radius:18px;padding:18px 22px 18px 66px;box-shadow:0 16px 40px -30px rgba(40,34,90,.4);color:var(--ink-2);}
+.steps li::before{content:counter(step);position:absolute;left:20px;top:18px;width:30px;height:30px;border-radius:50%;
+  background:var(--mint);color:var(--ink-on-mint);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px;
+  display:flex;align-items:center;justify-content:center;}
+.steps li b{color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;display:block;margin-bottom:2px;}
 
-/* failure states */
-.err{max-width:640px;margin:0 auto 26px;background:#FFF4F3;border:1.5px solid rgba(240,85,78,.35);
-  border-left:4px solid var(--red-600);border-radius:14px;padding:16px 18px;color:#7A211C;font-size:15px;}
-.err strong{font-family:'Plus Jakarta Sans',sans-serif;display:block;margin-bottom:4px;color:var(--red-600);}
-.err code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:rgba(240,85,78,.1);padding:1px 5px;border-radius:4px;}
-[hidden]{display:none!important;}
+/* safety note */
+.note{max-width:760px;margin:22px auto 0;background:#FFF4F3;border:1.5px solid rgba(240,85,78,.35);
+  border-left:4px solid var(--red-600);border-radius:14px;padding:16px 18px;color:#7A211C;font-size:15.5px;}
+.note strong{font-family:'Plus Jakarta Sans',sans-serif;display:block;margin-bottom:4px;color:var(--red-600);}
 
-.fineprint{max-width:560px;margin:26px auto 0;text-align:center;color:var(--muted);font-size:14px;}
+.fineprint{max-width:620px;margin:26px auto 0;text-align:center;color:var(--muted);font-size:14px;}
+.fineprint a{color:var(--mint-700);font-weight:600;}
+.fineprint a:hover{text-decoration:underline;}
 
 /* footer */
 footer{background:#12181d;color:#cbd3da;margin-top:clamp(40px,7vw,80px);}
@@ -123,14 +119,7 @@ footer a:hover{color:var(--mint);}
 footer .fine{color:#8b97a2;font-size:13px;max-width:620px;margin:14px auto 0;font-style:italic;}
 footer .cr{color:#8b97a2;font-size:13px;margin-top:12px;}
 
-/* scroll reveal — same mechanic as /premium/ */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);}
-.reveal.vis{opacity:1;transform:none;}
-.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}
 @media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto;}
-  .reveal{opacity:1!important;transform:none!important;}
-  .skel{animation:none;}
   .btn:hover{transform:none!important;}
 }
 </style>
@@ -149,42 +138,46 @@ footer .cr{color:#8b97a2;font-size:13px;margin-top:12px;}
 <section class="section">
   <div class="wrap">
 
-    <div class="sec-head reveal">
+    <div class="sec-head">
       <span class="eyebrow">Pricing</span>
-      <h2>Subscribe to <span class="st c-green">Remira Premium</span></h2>
-      <!--
-        ⚠️ DO NOT restore the previous wording ("with any tax for your location already
-        included"). It was true in the UK/EU and FALSE in the US, and the checkout
-        contradicted it to the customer's face.
-
-        The prices carry tax_mode "location", so Paddle follows each country's
-        convention. Measured against the same $8.99 price:
-          GB  -> subtotal $7.49 + tax $1.50 = $8.99 total   (tax carved OUT — page matches)
-          US  -> subtotal $8.99 + tax $0.72 = $9.71 total   (tax added ON TOP — page did not)
-        PricePreview reports $0.00 tax for a US address, so the figure rendered on the
-        cards is pre-tax there and the checkout total is higher. This sentence is the
-        only thing setting that expectation, so it has to be true in both regimes.
-      -->
-      <p>Prices are shown in your local currency. Where sales tax applies, it is added at
-         checkout — you will see your exact total before you pay.</p>
+      <h1>Remira Premium <span class="st c-green">lives in the app</span></h1>
+      <p>Start with 21 days free, no card needed. After that, subscribe in the Remira iPhone app through the App Store.</p>
     </div>
 
-    <!-- Populated by the script only when Paddle cannot be reached or configured. -->
-    <div class="err" id="err" hidden></div>
-
-    <div class="toggle-row reveal d1">
-      <div class="toggle" role="radiogroup" aria-label="Billing period" id="toggle">
-        <button type="button" role="radio" aria-checked="true"  data-freq="month">Monthly</button>
-        <button type="button" role="radio" aria-checked="false" data-freq="year">Yearly</button>
+    <div class="cols">
+      <div class="pcard prem">
+        <div class="tier">Remira Premium</div>
+        <div class="price-line"><span class="amt">$8.99</span><span class="per">/ month</span></div>
+        <div class="tag">or <span class="yr">$59.99 a year</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>21 days free, no card.</b> Your trial starts when your CGM first syncs with Remira.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>One subscription covers the patient and every caregiver.</b> Parents, partners and DiaBuddies never pay for a seat.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Subscribe and manage in the App Store.</b> Billing, renewals and refunds are handled by Apple.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Cancel any time</b> in iPhone Settings &gt; your name &gt; Subscriptions.</span></li>
+        </ul>
+        <a class="btn btn-mint" href="https://apps.apple.com/us/app/remira-t1d/id6759989867" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.1 1-.3 2-1 2.8-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2 1-2.7.8-.8 2-1.4 2.8-1.4ZM19 17.3c-.5 1.2-.8 1.7-1.4 2.7-.9 1.4-2.2 3.1-3.8 3.1-1.4 0-1.8-.9-3.7-.9-1.9 0-2.3.9-3.7.9-1.6 0-2.8-1.5-3.7-2.9C-.1 16.7-.6 11 1.6 8.2 3 6.4 4.9 5.6 6.7 5.6c1.8 0 2.9 1 4.4 1 1.4 0 2.3-1 4.4-1 1.5 0 3.2.8 4.3 2.2-3.8 2-3.2 7.4.2 8.5Z"/></svg>Get Remira on the App Store</a>
       </div>
     </div>
 
-    <div class="cols" id="cols"></div>
+    <div class="steps">
+      <h2>How it works</h2>
+      <ol>
+        <li><b>Download Remira and connect your CGM.</b> Your 21-day free trial starts when your CGM first syncs. No card is needed, and one free trial is available per person.</li>
+        <li><b>Subscribe in the app before day 21.</b> Choose $8.99 a month or $59.99 a year. You pay with your Apple Account, and the subscription renews automatically until you cancel. If you do not subscribe, access ends when the trial does.</li>
+        <li><b>Manage or cancel in iPhone Settings.</b> Go to Settings &gt; your name &gt; Subscriptions. Cancel at least 24 hours before the renewal date to avoid the next charge. Deleting your Remira account does not cancel your subscription.</li>
+      </ol>
+    </div>
 
-    <p class="fineprint reveal d2">
-      Payments and invoicing are handled by Paddle, our merchant of record.
-      Cancel any time — you keep Premium until the end of the period you paid for.
-      See our <a href="/refunds/">refund policy</a>.
+    <div class="note" role="note">
+      <strong>When access ends, Remira alerts stop.</strong>
+      If your trial or subscription ends, the app and all Remira alerts stop, including urgent-low alerts. Your Dexcom app's own alerts keep working. Remira is not a replacement for your CGM's alerts, so always keep them on.
+    </div>
+
+    <p class="fineprint">
+      Prices are in US dollars. The App Store shows the price in your local currency before you confirm.
+      Refunds are requested from Apple at reportaproblem.apple.com.
+      See our <a href="/terms/">Terms of Service</a>, <a href="/privacy/">Privacy Policy</a>,
+      <a href="/refunds/">Refund Policy</a> and <a href="/support/">Support</a> page.
     </p>
 
   </div>
@@ -197,326 +190,13 @@ footer .cr{color:#8b97a2;font-size:13px;margin-top:12px;}
       <a href="/support/">Support</a> ·
       <a href="/privacy/">Privacy Policy</a> ·
       <a href="/terms/">Terms of Service</a> ·
+      <a href="/refunds/">Refund Policy</a> ·
       <a href="/">remira-ai.com</a>
     </nav>
     <p class="fine">Remira helps you see your own patterns. It is not a medical device. It does not diagnose, does not recommend insulin doses, and always points back to your care team. We never sell your data.</p>
     <p class="cr">© 2026 Remira LLC. All rights reserved.</p>
   </div>
 </footer>
-
-<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<!-- Generated from .env by `npm run paddle:config`. Holds only the public
-     client-side token and which Paddle environment to talk to. -->
-<script src="./paddle-config.js"></script>
-
-<script>
-(function () {
-  'use strict';
-
-  /* ==========================================================================
-     TIERS — edit here. Everything below renders from this array.
-     ==========================================================================
-     @typedef {Object} Tier
-     @property {string}   name           Shown as the card heading.
-     @property {string}   description    One line under the price.
-     @property {string[]} features       Bullet list.
-     @property {Object}   priceId        Paddle price IDs, one per frequency.
-     @property {string}   priceId.month
-     @property {string}   priceId.year
-
-     Keep the braces un-nested above: GitHub Pages runs these files through Jekyll,
-     whose Liquid parser treats a doubled brace as a template tag and fails the
-     whole site build. The .nojekyll file at the site root disables that, but the
-     habit is worth keeping.
-  */
-
-  /** @type {Tier[]} */
-  var TIERS = [
-    {
-      name: 'Individual',
-      description: 'For one person living with T1D. Cancel any time.',
-      features: [
-        'The forecast for your day ahead',
-        'Gentle heads ups before a likely high or low',
-        'Decision Zones, the moments that matter most',
-        'DiaBuddy, so you are not doing this alone',
-        'Your monthly Remira wrapped'
-      ],
-      /* Production price IDs, and the default.
-         ⚠️ PRICE IDS ARE ACCOUNT-SCOPED. A sandbox account has entirely different
-         pri_… values, so hardcoding these while making the ACCOUNT configurable via
-         paddle-config.js was inconsistent: switching to sandbox would keep asking for
-         production prices, and Paddle would reject the checkout. `applyPriceOverrides`
-         below lets the generated config supply sandbox IDs. When the config carries
-         none — which is the case for the deployed production config — these stand. */
-      priceId: {
-        month: 'pri_01kzxp1492qfdakfz3haq67ekx',
-        year:  'pri_01kzxp1wnk1t9r9w99kabd3wty'
-      }
-    }
-    // Family is not on sale yet — there is no Paddle product for it, so it stays a
-    // marketing-only tier on / and /premium/. Add an entry here once the catalog has
-    // one and the page will lay out both cards automatically.
-  ];
-
-  /* ====================== end of the editable section ====================== */
-
-  var CHECK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
-  var VALID_ENVIRONMENTS = ['sandbox', 'production'];
-  var REQUIRED_PREFIX = { sandbox: 'test_', production: 'live_' };
-
-  var errEl = document.getElementById('err');
-  var colsEl = document.getElementById('cols');
-  var toggleEl = document.getElementById('toggle');
-
-  var frequency = 'month';
-  /** priceId -> the formatted total string Paddle gave us. Never parsed, never re-formatted. */
-  var prices = {};
-  var paddleReady = false;
-
-  function showError(title, detail) {
-    errEl.innerHTML = '<strong>' + title + '</strong>' + detail;
-    errEl.hidden = false;
-  }
-
-  /* ---------------------------------------------------------------- config */
-  /* Fail loudly and visibly rather than silently defaulting to an environment —
-     pointing the live site at the wrong Paddle account must never be quiet. */
-  function readConfig() {
-    var cfg = window.__PADDLE_CONFIG__;
-
-    if (!cfg || !cfg.environment || !cfg.token) {
-      showError(
-        'Checkout is not configured.',
-        'The Paddle config file is missing or empty. Run <code>npm run paddle:config</code> and redeploy.'
-      );
-      return null;
-    }
-    if (VALID_ENVIRONMENTS.indexOf(cfg.environment) === -1) {
-      showError(
-        'Checkout is not configured.',
-        'Paddle environment is <code>' + String(cfg.environment) + '</code>; it must be <code>sandbox</code> or <code>production</code>.'
-      );
-      return null;
-    }
-    if (cfg.token.indexOf(REQUIRED_PREFIX[cfg.environment]) !== 0) {
-      showError(
-        'Checkout is not configured.',
-        'The client token does not match the <code>' + cfg.environment + '</code> environment. Refusing to load Paddle.'
-      );
-      return null;
-    }
-    return cfg;
-  }
-
-  /* ------------------------------------------------------- customer email */
-  /* No web session exists — sign-in lives in the iOS app. The app opens this page as
-     /pricing/?email=…, and that value pre-fills checkout. Ignored unless it parses. */
-  function readEmail() {
-    var raw = new URLSearchParams(location.search).get('email');
-    if (!raw) return null;
-    var email = raw.trim();
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) ? email : null;
-  }
-  var customerEmail = readEmail();
-
-  /* --------------------------------------------------- Remira account id */
-  /* The EXACT join key between this purchase and a Remira account, passed through to
-     the webhook as custom_data.person_id and mirrored into the backend's
-     paddle_customer table. Without it the backend can only match on the email typed
-     at checkout — which the buyer is free to change, leaving a paid subscription
-     that maps to nobody.
-
-     The app opens /pricing/?email=…&person_id=<supabase auth.users.id>. UUID-shaped
-     or ignored: it is echoed into custom_data, and the server validates it again
-     before use, so a hand-edited value can at worst attach a subscription the
-     attacker paid for to an account id they guessed. */
-  function readPersonId() {
-    var raw = new URLSearchParams(location.search).get('person_id');
-    if (!raw) return null;
-    var id = raw.trim();
-    return /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(id)
-      ? id
-      : null;
-  }
-  var personId = readPersonId();
-
-  /* --------------------------------------------------------------- render */
-  function buildCards() {
-    if (TIERS.length > 1) colsEl.classList.add('multi');
-
-    TIERS.forEach(function (tier, i) {
-      var card = document.createElement('div');
-      card.className = 'pcard prem reveal' + (i ? ' d' + i : '');
-
-      var features = tier.features.map(function (f) {
-        return '<li>' + CHECK_SVG + '<span>' + f + '</span></li>';
-      }).join('');
-
-      card.innerHTML =
-        '<div class="tier">' + tier.name + '</div>' +
-        '<div class="price-line">' +
-          '<span class="amt" data-amt><span class="skel"></span></span>' +
-          '<span class="per" data-per></span>' +
-        '</div>' +
-        '<div class="tag">' + tier.description + '</div>' +
-        '<ul>' + features + '</ul>' +
-        '<button type="button" class="btn btn-mint" data-subscribe disabled>Subscribe</button>';
-
-      card.querySelector('[data-subscribe]').addEventListener('click', function () {
-        openCheckout(tier);
-      });
-
-      colsEl.appendChild(card);
-      tier._el = card;
-    });
-  }
-
-  /* Paints whatever is currently known. Called on build, on price arrival, and on
-     every toggle — the toggle only swaps which stored string is shown, so switching
-     between monthly and yearly costs no network request. */
-  function renderPrices() {
-    TIERS.forEach(function (tier) {
-      var priceId = tier.priceId[frequency];
-      var total = prices[priceId];
-      var amtEl = tier._el.querySelector('[data-amt]');
-      var perEl = tier._el.querySelector('[data-per]');
-      var btnEl = tier._el.querySelector('[data-subscribe]');
-
-      if (total) {
-        // Paddle's already-localized, already-formatted string, used verbatim.
-        amtEl.textContent = total;
-        perEl.textContent = frequency === 'month' ? '/ month' : '/ year';
-        btnEl.disabled = !paddleReady;
-      } else {
-        amtEl.innerHTML = '<span class="skel"></span>';
-        perEl.textContent = '';
-        btnEl.disabled = true;
-      }
-    });
-  }
-
-  /* -------------------------------------------------------------- toggle */
-  toggleEl.addEventListener('click', function (e) {
-    var btn = e.target.closest('button[data-freq]');
-    if (!btn || btn.dataset.freq === frequency) return;
-
-    frequency = btn.dataset.freq;
-    Array.prototype.forEach.call(toggleEl.querySelectorAll('button'), function (b) {
-      b.setAttribute('aria-checked', String(b.dataset.freq === frequency));
-    });
-    renderPrices();
-  });
-
-  /* -------------------------------------------------------------- prices */
-  function loadPrices(paddle) {
-    // One request covers every tier at both frequencies, so the toggle never refetches.
-    var items = [];
-    TIERS.forEach(function (tier) {
-      items.push({ priceId: tier.priceId.month, quantity: 1 });
-      items.push({ priceId: tier.priceId.year, quantity: 1 });
-    });
-
-    // No `address` is passed on purpose. This site is static on GitHub Pages, so
-    // there is no request handler to read a geo header from — Paddle geolocates the
-    // visitor by IP instead, which is its documented behaviour when address is absent.
-    return paddle.PricePreview({ items: items }).then(function (result) {
-      result.data.details.lineItems.forEach(function (li) {
-        prices[li.price.id] = li.formattedTotals.total;
-      });
-      paddleReady = true;
-      renderPrices();
-    });
-  }
-
-  /* ------------------------------------------------------------ checkout */
-  function openCheckout(tier) {
-    var priceId = tier.priceId[frequency];
-    if (!paddleReady || !prices[priceId]) return;
-
-    var options = {
-      items: [{ priceId: priceId, quantity: 1 }],
-      settings: {
-        displayMode: 'overlay',
-        variant: 'one-page',
-        theme: 'light',
-        // Absolute, and derived from the current origin so it is
-        // https://remira-ai.com/welcome/ in production without being hard-coded.
-        successUrl: new URL('/welcome/', location.origin).href,
-        // Let an anonymous visitor type any email; lock it when the app told us who
-        // this is, so they cannot end up subscribing under a different account.
-        allowLogout: !customerEmail
-      }
-    };
-    if (customerEmail) options.customer = { email: customerEmail };
-    /* Rides along on the transaction, and onto the subscription created from it, so
-       the fulfillment webhook can bind this purchase to a Remira account exactly
-       rather than guessing from the email. Omitted entirely when absent — an empty
-       object here would overwrite nothing useful but would still ship a key. */
-    if (personId) options.customData = { person_id: personId };
-
-    window.Paddle.Checkout.open(options);
-  }
-
-  /* --------------------------------------------------- price ID overrides */
-  /* Point the tiers at a different account's prices, when the generated config says
-     to. Only sandbox configs carry `priceIds`; the deployed production config has no
-     such key, so production keeps the IDs hardcoded in TIERS and this is a no-op.
-
-     Validated per-id rather than trusted wholesale: a malformed override silently
-     falling through to a production price ID while `Paddle.Environment` is sandbox
-     would produce a confusing "price not found" at checkout rather than here. */
-  function applyPriceOverrides(cfg) {
-    var ids = cfg && cfg.priceIds;
-    if (!ids) return;
-    TIERS.forEach(function (tier) {
-      ['month', 'year'].forEach(function (period) {
-        var id = ids[period];
-        if (typeof id === 'string' && /^pri_[a-z0-9]{26}$/.test(id)) {
-          tier.priceId[period] = id;
-        }
-      });
-    });
-  }
-
-  /* ---------------------------------------------------------------- boot */
-  var cfg = readConfig();
-  applyPriceOverrides(cfg);
-  buildCards();
-
-  if (cfg) {
-    if (!window.Paddle) {
-      showError('Checkout could not load.', 'Paddle.js was blocked or failed to load. Disable any ad blocker and reload.');
-    } else {
-      // Set explicitly for both values so production is never reached by falling
-      // through a default.
-      window.Paddle.Environment.set(cfg.environment);
-      window.Paddle.Initialize({ token: cfg.token });
-
-      loadPrices(window.Paddle).catch(function (e) {
-        showError(
-          'Prices could not be loaded.',
-          'Paddle returned an error, so checkout is disabled. Please reload, or email support@remira-ai.com.'
-        );
-        if (window.console) console.error('[pricing] PricePreview failed', e);
-      });
-    }
-  }
-
-  /* Reveal on scroll — same mechanic as /premium/. */
-  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if ('IntersectionObserver' in window && !reduced) {
-    var ro = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add('vis'); ro.unobserve(en.target); }
-      });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(function (el) { ro.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('vis'); });
-  }
-})();
-</script>
 
 </body>
 </html>

@@ -14,7 +14,6 @@ const STATIC_PAGES = [
   "external",
   "premium",
   "pricing",
-  "welcome",
   "privacy",
   "terms",
   "support",

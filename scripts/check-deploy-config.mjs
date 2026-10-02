@@ -1,72 +1,97 @@
 /**
- * Pre-deploy guard: refuse to publish anything but a production Paddle config.
+ * Deploy guard for remira-ai.com.
  *
- * Wired as the `predeploy` npm script, so `npm run deploy` runs it automatically —
- * including deploys nobody thought to check.
+ * Wired as the `predeploy` npm script, so `npm run deploy` (gh-pages -d dist) runs it
+ * automatically and refuses to publish when it fails. dist/ is committed and is
+ * exactly what goes live, so this is the last moment to catch a bad deploy.
  *
- * WHY THIS EXISTS. `dist/pricing/paddle-config.js` is git-tracked and is exactly what
- * `gh-pages -d dist` publishes to remira-ai.com. Two routine actions can put a SANDBOX
- * token there:
+ * WHY THIS EXISTS. Remira subscriptions are sold only through Apple In-App Purchase,
+ * inside the iPhone app. The site used to carry a Paddle web checkout that never
+ * launched; it has been removed. This guard makes sure none of it comes back by
+ * accident (an old build, a stale copy, a merge) and that the published site is
+ * complete and in sync with its sources. It fails, with a non-zero exit, when:
  *
- *   1. `npm run paddle:config` with PADDLE_ENV=sandbox — now blocked at the source
- *      (gen-paddle-config.mjs writes public/ only for sandbox).
- *   2. `npm run build` while a sandbox config sits in public/ — Vite copies public/**
- *      verbatim into dist/. NOTHING upstream can prevent this one, which is why the
- *      check has to live here, at the last moment before publishing.
+ *   1. any file under dist/ mentions a web payment processor or a Paddle price id
+ *      ("paddle", "pri_01", "cdn.paddle.com", "stripe" — case-insensitive);
+ *   2. a page the site must always have is missing from dist/;
+ *   3. a static page under public/<name>/index.html is not byte-identical to
+ *      dist/<name>/index.html, or the root index.html differs from dist/index.html
+ *      (edit the source page, then copy it into dist/).
  *
- * ⚠️ THE FAILURE IS SILENT WITHOUT THIS CHECK. The pricing page validates that the
- * token prefix matches the environment — and `sandbox` + `test_` passes that test. So a
- * mis-deployed page shows no error, renders sandbox prices, and takes no money. Revenue
- * stops and nothing alerts. A loud non-zero exit here is the whole point.
+ * Run it by hand with: node scripts/check-deploy-config.mjs
  */
 
-import { existsSync, readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
+import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const FILE = join(ROOT, "dist", "pricing", "paddle-config.js");
+const DIST = join(ROOT, "dist");
+const PUBLIC = join(ROOT, "public");
 
-function fail(msg) {
-  console.error(`\n✗ predeploy: ${msg}\n`);
-  console.error("  Fix: PADDLE_ENV=production npm run paddle:config && npm run stage:static");
-  console.error("  Then re-run the deploy.\n");
+const FORBIDDEN = ["paddle", "pri_01", "cdn.paddle.com", "stripe"];
+
+const REQUIRED = [
+  "index.html",
+  "pricing/index.html",
+  "privacy/index.html",
+  "terms/index.html",
+  "refunds/index.html",
+  "support/index.html",
+  "premium/index.html",
+];
+
+const problems = [];
+
+function walk(dir) {
+  const out = [];
+  for (const name of readdirSync(dir)) {
+    const p = join(dir, name);
+    if (statSync(p).isDirectory()) out.push(...walk(p));
+    else out.push(p);
+  }
+  return out;
+}
+
+const rel = (p) => relative(ROOT, p);
+
+if (!existsSync(DIST)) {
+  console.error("\ndeploy guard: FAILED\n  - dist/ does not exist\n");
   process.exit(1);
 }
 
-if (!existsSync(FILE)) {
-  fail(
-    "dist/pricing/paddle-config.js is missing — /pricing/ would deploy with no Paddle " +
-      "config and render its 'Checkout is not configured' error."
-  );
+// 1. Forbidden payment-processor references anywhere in dist/.
+for (const file of walk(DIST)) {
+  const text = readFileSync(file).toString("latin1").toLowerCase();
+  const hits = FORBIDDEN.filter((term) => text.includes(term));
+  if (hits.length) problems.push(`${rel(file)} contains forbidden text: ${hits.join(", ")}`);
 }
 
-const contents = readFileSync(FILE, "utf8");
-
-// Parse the object rather than regex the file, so a comment mentioning "production"
-// cannot satisfy the check.
-const match = contents.match(/window\.__PADDLE_CONFIG__\s*=\s*(\{[\s\S]*?\});/);
-if (!match) fail("could not parse window.__PADDLE_CONFIG__ out of dist/pricing/paddle-config.js");
-
-let cfg;
-try {
-  cfg = JSON.parse(match[1]);
-} catch {
-  fail("window.__PADDLE_CONFIG__ in dist/ is not valid JSON");
+// 2. Pages that must always be published.
+for (const page of REQUIRED) {
+  if (!existsSync(join(DIST, page))) problems.push(`dist/${page} is missing`);
 }
 
-if (cfg.environment !== "production") {
-  fail(
-    `dist/ is built for environment '${cfg.environment}', not 'production'. ` +
-      "Deploying this would point remira-ai.com at the wrong Paddle account."
-  );
+// 3. Source pages and their published copies must be byte-identical.
+const pairs = [[join(ROOT, "index.html"), join(DIST, "index.html")]];
+for (const src of walk(PUBLIC)) {
+  if (src.endsWith("/index.html")) pairs.push([src, join(DIST, relative(PUBLIC, src))]);
+}
+for (const [src, out] of pairs) {
+  if (!existsSync(src)) {
+    problems.push(`${rel(src)} is missing`);
+  } else if (!existsSync(out)) {
+    problems.push(`${rel(out)} is missing (copy it from ${rel(src)})`);
+  } else if (!readFileSync(src).equals(readFileSync(out))) {
+    problems.push(`${rel(out)} differs from ${rel(src)} (copy the source page into dist/)`);
+  }
 }
 
-if (typeof cfg.token !== "string" || !cfg.token.startsWith("live_")) {
-  fail(
-    `dist/ carries a token starting '${String(cfg.token).slice(0, 5)}…' — production ` +
-      "requires a live_ client token. A test_ token here means live checkout takes no money."
-  );
+if (problems.length) {
+  console.error("\ndeploy guard: FAILED — refusing to deploy.\n");
+  for (const p of problems) console.error(`  - ${p}`);
+  console.error("");
+  process.exit(1);
 }
 
-console.log(`✓ predeploy: dist/ is production (token ${cfg.token.slice(0, 9)}…)`);
+console.log("deploy guard: ok");

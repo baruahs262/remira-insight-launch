@@ -49,7 +49,7 @@ const WaitlistCTA = () => {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="flex flex-col items-center gap-6 w-full max-w-md mx-auto">
           <a
-            href="https://apps.apple.com/us/app/remira-ai/id6759989867"
+            href="https://apps.apple.com/us/app/remira-t1d/id6759989867"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 rounded-full text-primary-foreground font-display font-semibold text-lg hover:scale-105 transition-transform glow-primary bg-[#70c5d7] whitespace-nowrap">

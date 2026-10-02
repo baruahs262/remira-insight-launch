@@ -47,7 +47,7 @@ helping you spend less time managing diabetes and more time living.
           transition={{ delay: 0.65, duration: 0.6 }}>
 
           <a
-            href="https://apps.apple.com/us/app/remira-ai/id6759989867"
+            href="https://apps.apple.com/us/app/remira-t1d/id6759989867"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-8 py-4 rounded-full text-primary-foreground font-display font-semibold text-lg glow-primary hover:scale-105 transition-transform bg-[#79d9ec]">

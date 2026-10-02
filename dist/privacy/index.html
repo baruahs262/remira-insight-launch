@@ -152,6 +152,7 @@
   </head>
 
   <body>
+    <!-- DRAFT: billing sections updated for Apple In-App Purchase; pending counsel review before App Store launch. -->
     <div class="glow" aria-hidden="true"></div>
 
     <main class="wrap">
@@ -159,8 +160,8 @@
         <img class="logo" src="/remira-favicon.png" alt="Remira" />
         <h1>Remira Privacy Policy</h1>
         <p class="dates">
-          <strong>Last Updated:</strong> September 1, 2026 &nbsp;·&nbsp;
-          <strong>Effective Date:</strong> September 1, 2026
+          <strong>Last Updated:</strong> October 2, 2026 &nbsp;·&nbsp;
+          <strong>Effective:</strong> On the Remira subscription launch date
         </p>
       </header>
 
@@ -351,7 +352,12 @@
             We do not use tracking technologies for advertising, and we do not collect Apple’s
             advertising identifier.
           </li>
-          <li>We do not receive your card number. Payments are processed by Paddle.</li>
+          <li>
+            We do not receive your card number or any other payment details. Subscriptions are
+            bought through Apple’s App Store. Apple processes the payment, and Apple’s own
+            <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">privacy policy</a> governs your payment data. From Apple we receive only transaction
+            IDs, which product you bought, purchase and renewal dates, and subscription status.
+          </li>
         </ul>
       </section>
 
@@ -374,8 +380,7 @@
               <tr><td>Supabase</td><td>Email address and sign-in identity</td></tr>
               <tr><td>Amplitude</td><td>Usage events and the properties described in section 2f. No glucose readings or forecasts</td></tr>
               <tr><td>Resend</td><td>Delivery of sign-in and account emails</td></tr>
-              <tr><td>Apple</td><td>Push notification delivery</td></tr>
-              <tr><td>Paddle</td><td>Payment processing and card data</td></tr>
+              <tr><td>Apple</td><td>Push notification delivery. Subscription billing and payment data, under Apple’s own privacy policy; we receive only transaction IDs, the product, purchase and renewal dates, and subscription status. A single “free trial used” flag for your device, through Apple DeviceCheck (section 9)</td></tr>
             </tbody>
           </table>
         </div>
@@ -578,10 +583,11 @@
 
         <h3>Parental consent</h3>
         <p>
-          By completing setup on the young person’s device and creating the account, the parent or
-          guardian provides consent for Remira to collect and use that child’s information as
-          described in this policy. Where required, we verify parental identity through the payment
-          method used for the subscription.
+          The parent or guardian gives consent on the young person’s device, during setup. They
+          enter their name and email address and tick a box confirming that they are the child’s
+          parent or legal guardian and that they consent to Remira collecting and using the child’s
+          information as described in this policy. The account is then created with the parent’s
+          or guardian’s email address.
         </p>
 
         <h3>Rights of parents and guardians</h3>
@@ -672,6 +678,21 @@
         <p>
           <strong>If you are in the UK or EEA, we perform full erasure by default</strong>,
           including glucose and event history, unless you tell us otherwise.
+        </p>
+
+        <h3>Free-trial records</h3>
+        <p>
+          Each person gets one free trial. To enforce that, we keep a small record of trials that
+          have been used. It contains one-way hashes of your email address, your Sign in with Apple
+          identifier, your CGM account, and your device identifier. We also set a single “free
+          trial used” flag for your device through Apple’s DeviceCheck service; Apple stores that
+          flag, and it holds no personal information.
+        </p>
+        <p>
+          A one-way hash cannot be reversed to reveal the original email address or identifier. We
+          can only check whether a new sign-up matches one that has already had a trial.
+          <strong>We keep this record after you delete your account, only to prevent repeat free
+          trials</strong>, and we use it for nothing else.
         </p>
 
         <h3>Data on your device</h3>
